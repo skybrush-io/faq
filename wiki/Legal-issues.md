@@ -1,5 +1,3 @@
-# Legal issues
-
 **IMPORTANT:** Nothing on this page is to be interpreted as legal advice. We
 are not lawyers. If you need professional legal advice on matters related to
 running drone shows, consult a lawyer.

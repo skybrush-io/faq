@@ -5,6 +5,8 @@ on:
     paths:
       - wiki/**
       - .github/workflows/sync-wiki.yml
+      - Gemfile
+      - Gemfile.lock
 concurrency:
   group: publish-wiki
   cancel-in-progress: true

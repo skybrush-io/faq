@@ -16,10 +16,17 @@ bundle install --quiet
 
 rm -f "${OUTDIR}/nav.adoc"
 
-for file in `ls -v "${WIKI}"/*.md | grep -v "Home.md"`; do
+for file in `ls -v "${WIKI}"/*.md`; do
     base=`basename "$file" .md`
-    title="`echo \"$base\" | tr '_-' '  '`"
-    outfname=`echo "$base" | tr '[:upper:]' '[:lower:]'`.adoc
+
+    if [ "x$base" = "xHome" ]; then
+        title="Frequently Asked Questions"
+        outfname="index.adoc"
+    else
+        title="`echo \"$base\" | tr '_-' '  '`"
+        outfname=`echo "$base" | tr '[:upper:]' '[:lower:]'`.adoc
+    fi
+
     tmpfname="${outfname}.tmp"
     outfile="${OUTDIR}/pages/$outfname"
 
@@ -30,6 +37,12 @@ for file in `ls -v "${WIKI}"/*.md | grep -v "Home.md"`; do
 
     rm -f "${outfname}.tmp"
 
-    echo "* xref:${outfname}[]" >>"${OUTDIR}/nav.adoc"
+    if [ -f "partials/footer_$outfname" ]; then
+        cat "partials/footer_$outfname" >>$outfile
+    fi
+
+    if [ "x$base" != "xHome" ]; then
+        echo "* xref:${outfname}[]" >>"${OUTDIR}/nav.adoc"
+    fi
 done
 

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+if File.file? (kramdown_asciidoc = File.join (File.dirname __dir__), 'lib/kramdown-asciidoc.rb')
+  require kramdown_asciidoc
+else
+  require 'kramdown-asciidoc'
+end
+require 'kramdown-asciidoc/cli'
+
+exit Kramdown::AsciiDoc::Cli.run

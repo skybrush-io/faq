@@ -2,15 +2,14 @@
 
 Welcome to the list of frequently asked questions regarding Skybrush, the open-source drone show software.
 
-Questions and the corresponding answers are organized into categories.
-Please visit the page of the category you are interested in:
+Questions and the corresponding answers are organized into categories. Please visit the page of the category you are interested in:
 
-* [[Building custom drones]] with Skybrush compatibility
-* [[Server setup]]
-* [[Running shows]] with Skybrush Live
-* [[Show design]] with Skybrush Studio for Blender
-* [[Security]]
-* [[Troubleshooting]] the most common issues
-* [[Legal issues]]
+* xref:building-custom-drones.adoc[]
+* xref:legal-issues.adoc[]
+* xref:running-shows.adoc[]
+* xref:security.adoc[]
+* xref:server-setup.adoc[]
+* xref:show-design.adoc[]
+* xref:troubleshooting.adoc[]
 
 TIP: If you want to contribute questions and answers, feel free to visit our https://github.com/skybrush-io/faq[FAQ repository] on GitHub. These pages are automatically updated from the GitHub repository at regular intervals.

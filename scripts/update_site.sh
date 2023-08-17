@@ -16,23 +16,23 @@ bundle install --quiet
 
 rm -f "${OUTDIR}/nav.adoc"
 
-for file in `ls -v "${WIKI}"/*.md`; do
+for file in `ls -v "${WIKI}"/*.md | grep -v "Home.md"`; do
     base=`basename "$file" .md`
 
-    if [ "x$base" = "xHome" ]; then
-        title="Frequently Asked Questions"
-        outfname="index.adoc"
-    else
-        title="`echo \"$base\" | tr '_-' '  '`"
-        outfname=`echo "$base" | tr '[:upper:]' '[:lower:]'`.adoc
-    fi
+    title="`echo \"$base\" | tr '_-' '  '`"
+    outfname=`echo "$base" | tr '[:upper:]' '[:lower:]'`.adoc
 
     tmpfname="${outfname}.tmp"
     outfile="${OUTDIR}/pages/$outfname"
 
     bundle exec kramdoc --format=GFM --wrap=ventilate -o "${tmpfname}" $file
 
-    echo -e "= ${title}\n" >$outfile
+    if [ -f "partials/header_$outfname" ]; then
+        cat "partials/header_$outfname" >>$outfile
+    else
+        echo -e "= ${title}\n" >$outfile
+    fi
+
     cat "${tmpfname}" >>$outfile
 
     rm -f "${outfname}.tmp"
@@ -45,4 +45,10 @@ for file in `ls -v "${WIKI}"/*.md`; do
         echo "* xref:${outfname}[]" >>"${OUTDIR}/nav.adoc"
     fi
 done
+
+INDEX="${OUTDIR}/pages/index.adoc"
+
+cat partials/header_index.adoc >"${INDEX}"
+cat "${OUTDIR}/nav.adoc" >>"${INDEX}"
+cat partials/footer_index.adoc >>"${INDEX}"
 

@@ -1,0 +1,5 @@
+name: faq
+title: Frequently Asked Questions
+version: 'latest'
+nav:
+  - modules/ROOT/nav.adoc

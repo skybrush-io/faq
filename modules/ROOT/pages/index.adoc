@@ -1,0 +1,9 @@
+= Frequently Asked Questions
+:imagesdir: ../../assets/images
+:experimental:
+
+Frequently asked questions and the corresponding answers are organized into categories. Please visit the page of the category you are interested in:
+
+* xref:security.adoc[Security]
+
+TIP: If you want to contribute questions and answers, feel free to visit our https://github.com/skybrush-io/faq[FAQ repository] on GitHub. These pages are automatically updated from the GitHub repository at regular intervals.

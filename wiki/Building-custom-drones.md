@@ -1,3 +1,4 @@
-This section is currently empty. Feel free to add the first question and answer
-here.
+## Should I use RTK capable GNSS receivers for outdoor drone shows?
+
+RTK capability is not strictly required for drone shows, but it is highly recommended. The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
 

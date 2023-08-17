@@ -3,6 +3,8 @@
 # Updates the AsciiDoc sources of the site based on the Markdown sources in
 # wiki/
 
+set -e
+
 SCRIPT_ROOT="`dirname $0`"
 cd "${SCRIPT_ROOT}/.."
 

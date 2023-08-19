@@ -1,7 +1,7 @@
 
 ## If I decide to build a custom light show drone, what components are required?
 
-1. Flight controller running Ardupilot [FC Requirements(https://github.com/stan-humphries/faq/blob/main/wiki/Building-custom-drones.md#what-flight-controller-can-i-use-with-skybrush-firmware)]
+1. Flight controller running Ardupilot [FC Requirements](https://github.com/stan-humphries/faq/blob/main/wiki/Building-custom-drones.md#what-flight-controller-can-i-use-with-skybrush-firmware)
 2. WiFi module (to connect to the ground station running Live)
 3. RTK GPS (see RTK)
 4. RC Receiver (Why do I need RC?)

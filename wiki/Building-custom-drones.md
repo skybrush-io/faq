@@ -31,7 +31,7 @@ For show drones, RC control is required for three things:
 
 One of the challenges of light show drones, is to bind an RC controller to multiple receivers on the drones.
 
-## 
+## What kinds of light fixtures does Skybrush firmware support?
 
 
 ## Is it possible to use the I2C bus of the flight controller to control the LEDs on my drone?

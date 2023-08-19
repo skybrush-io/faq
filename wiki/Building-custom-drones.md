@@ -8,7 +8,7 @@
 5. A light fixture (Tell me more about light fixtures)
 6. SiK Radio (What is SiK Radio?)
 
-## Skybrush Flight Controller requirements
+## What Flight Controller can I use with Skybrush firmware?
 
 You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores log files on the SD card. Its best to have 2MB of flash memory to accomodate the Skybrush firmware.  
 

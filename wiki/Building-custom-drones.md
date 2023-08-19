@@ -4,8 +4,8 @@
 1. A Flight controller running Ardupilot [more...](https://github.com/stan-humphries/faq/blob/main/wiki/Building-custom-drones.md#what-flight-controller-can-i-use-with-skybrush-firmware)
 2. A WiFi module to connect to the ground station running Live [more...]
 3. A GPS receiver - RTK GPS is highly recommended [more...]
-4. RC Receiver [more...]
-5. A light fixture (Tell me more about light fixtures)
+4. An RC Receiver [more...]
+5. A light fixture
 6. SiK Radio (What is SiK Radio?)
 
 ## What Flight Controller can I use with Skybrush firmware?

@@ -5,7 +5,7 @@
 2. A WiFi module to connect to the ground station running Live [more...]
 3. A GPS receiver - RTK GPS is highly recommended [more...]
 4. An RC Receiver [more...]
-5. A light fixture
+5. A light fixture [more...]
 6. SiK Radio (What is SiK Radio?)
 
 ## What Flight Controller can I use with Skybrush firmware?

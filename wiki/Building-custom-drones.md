@@ -10,11 +10,23 @@
 
 ## What Flight Controller can I use with Skybrush firmware?
 
-You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores it's log files on the SD card. Its best to have 2MB of flash memory to accomodate the Skybrush firmware and your LEDs.  
+You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores it's log files on the SD card. Its best to have 2MB of flash memory to accomodate the Skybrush firmware and its requirement to address your LEDs.  
 
 ## What WiFi module do I need on the drone?
 
 You will need a WiFi module on your drone (in station mode) to connect the Wifi router on your ground station. WiFi is used to upload flight plans (trajectories) to the drone before a show, and to monitor the fleet via MAVLink telemetry. Most users run mavesp8266 firmware on their WiFi modules. If you require dual-band Wifi, an ESP32 based module may be used.
+
+## What an RC Receiver to I need on the drone, and why?
+
+An RC (Remote Control) controller is generally used by RC hobbiests to fly RC models such as fixed wing aircraft and jets, helicopters, and drones. The system uses a controller (held by the pilot who uses sticks and switches to fly the model) connected by radio to a receiver on the model.
+
+For show drones, RC control is required for three things:
+1. To test fly and tune a new or reconfigured drone,
+2. An RC controller is the Skybrush recommended way to start a drone show, and
+3. As a secondary or tertiary way to control the drones during abnormalities.
+
+One of the challenges of light show drones, is to bind an RC controller to multiple receivers on the drones.
+
 
 ## Should I use RTK capable GNSS receivers for outdoor drone shows?
 

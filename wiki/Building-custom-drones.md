@@ -1,3 +1,18 @@
+
+## If I decide to build a custom light show drone, what components are required?
+
+1. Flight controller running Ardupilot (FC Requirements)
+2. WiFi module (to connect to the ground station running Live)
+3. RTK GPS (see RTK)
+4. RC Receiver (Why do I need RC?)
+5. A light fixture (Tell me more about light fixtures)
+6. SiK Radio (What is SiK Radio?)
+
+## Skybrush Flight Controller requirements
+
+You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores log files on the SD card. Its best to have 2MB of flash memory to accomodate the Skybrush firmware.  
+
+
 ## Should I use RTK capable GNSS receivers for outdoor drone shows?
 
 RTK capability is not strictly required for drone shows, but it is highly recommended. The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
@@ -55,4 +70,3 @@ void receiveEvent(int howMany) {
 Note that you will need the FastLED library for the sketch above; you can
 install it from the **Tools** / **Manage Libraries...** menu in the Arduino
 IDE.
-

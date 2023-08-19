@@ -16,6 +16,10 @@ You will need a flight controller capable of running Ardupilot firmware that inc
 
 You will need a WiFi module on your drone (in station mode) to connect the Wifi router on your ground station. WiFi is used to upload flight plans (trajectories) to the drone before a show, and to monitor the fleet via MAVLink telemetry. Most users run mavesp8266 firmware on their WiFi modules. If you require dual-band Wifi, an ESP32 based module may be used.
 
+## Should I use RTK capable GNSS receivers for outdoor drone shows?
+
+RTK capability is not strictly required for drone shows, but it is highly recommended. The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
+
 ## What RC Receiver do I need on the drone, and why?
 
 An RC (Remote Control) controller is generally used by RC hobbyists to fly RC models such as fixed wing aircraft and jets, helicopters, and drones. The system uses a controller (held by the pilot who uses sticks and switches to fly the model) connected by radio to a receiver on the model.
@@ -27,10 +31,7 @@ For show drones, RC control is required for three things:
 
 One of the challenges of light show drones, is to bind an RC controller to multiple receivers on the drones.
 
-
-## Should I use RTK capable GNSS receivers for outdoor drone shows?
-
-RTK capability is not strictly required for drone shows, but it is highly recommended. The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
+## 
 
 
 ## Is it possible to use the I2C bus of the flight controller to control the LEDs on my drone?

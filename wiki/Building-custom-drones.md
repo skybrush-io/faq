@@ -1,17 +1,20 @@
 
 ## If I decide to build a custom light show drone, what components are required?
 
-1. [Flight controller running Ardupilot](https://github.com/stan-humphries/faq/blob/main/wiki/Building-custom-drones.md#what-flight-controller-can-i-use-with-skybrush-firmware)
-2. WiFi module (to connect to the ground station running Live)
-3. RTK GPS (see RTK)
-4. RC Receiver (Why do I need RC?)
+1. A Flight controller running Ardupilot [more...](https://github.com/stan-humphries/faq/blob/main/wiki/Building-custom-drones.md#what-flight-controller-can-i-use-with-skybrush-firmware)
+2. A WiFi module to connect to the ground station running Live [more...]
+3. A GPS receiver - RTK GPS is highly recommended [more...]
+4. RC Receiver [more...]
 5. A light fixture (Tell me more about light fixtures)
 6. SiK Radio (What is SiK Radio?)
 
 ## What Flight Controller can I use with Skybrush firmware?
 
-You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores log files on the SD card. Its best to have 2MB of flash memory to accomodate the Skybrush firmware.  
+You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores it's log files on the SD card. Its best to have 2MB of flash memory to accomodate the Skybrush firmware and your LEDs.  
 
+## What WiFi module do I need on the drone?
+
+You will need a WiFi module on your drone (in station mode) to connect the Wifi router on your ground station. WiFi is used to upload flight plans (trajectories) to the drone before a show, and to monitor the fleet via MAVLink telemetry. Most users run mavesp8266 firmware on their WiFi modules. If you require dual-band Wifi, an ESP32 based module may be used.
 
 ## Should I use RTK capable GNSS receivers for outdoor drone shows?
 

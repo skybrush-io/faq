@@ -1,12 +1,12 @@
 
 ## If I decide to build a custom light show drone, what components are required?
 
-1. A Flight controller running Ardupilot [more...](https://github.com/stan-humphries/faq/blob/main/wiki/Building-custom-drones.md#what-flight-controller-can-i-use-with-skybrush-firmware)
+1. A Flight controller running Ardupilot [more...]
 2. A WiFi module to connect to the ground station running Live [more...]
 3. A GPS receiver - RTK GPS is highly recommended [more...]
 4. An RC Receiver [more...]
 5. A light fixture [more...]
-6. SiK Radio (What is SiK Radio?)
+6. A SiK Radio (optional) [more...]
 
 ## What Flight Controller can I use with Skybrush firmware?
 
@@ -20,20 +20,24 @@ You will need a WiFi module on your drone (in station mode) to connect the Wifi 
 
 RTK capability is not strictly required for drone shows, but it is highly recommended. The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
 
-## What RC Receiver do I need on the drone, and why?
+## What is an RC Receiver and why do I need one on each drone?
 
 An RC (Remote Control) controller is generally used by RC hobbyists to fly RC models such as fixed wing aircraft and jets, helicopters, and drones. The system uses a controller (held by the pilot who uses sticks and switches to fly the model) connected by radio to a receiver on the model.
 
 For show drones, RC control is required for three things:
 1. To test fly and tune a new or reconfigured drone,
 2. An RC controller is the Skybrush recommended way to start a drone show, and
-3. As a secondary or tertiary way to control the drones during abnormalities.
+3. As a secondary or tertiary way to control the drones during emergencies.
 
 One of the challenges of light show drones, is to bind an RC controller to multiple receivers on the drones.
 
 ## What kinds of light fixtures does Skybrush firmware support?
 
-Drone show drones typically use multiple RGB or RGBW LEDs. They are driven by the firmware via PWM or I2C outputs.
+Drone show drones typically use multiple RGB or RGBW LEDs. They are driven by the firmware via PWM or [I2C outputs].
+
+## What is a SiK Radio, and what does it do?
+
+The Ardupilot documentation has a great introduction to SiK Telemetry Radios [here](https://ardupilot.org/copter/docs/common-sik-telemetry-radio.html#:~:text=Overview,patch%20antenna%20on%20the%20ground). Skybrush uses SiK radios as a secondary or tertiary emergency control link using Sidekick software. SiK radios aren't really designed for broadcasting; they want to "pair" with each other. Skybrush uses a trick where the duty cycle of each drone radio is pulled down to zero so they are not allowed to transmit. the GCS radio then "thinks" that it's all alone (as it hears no traffic from the other radios) and starts sending data into the void. the drone radio listens to the traffic from the GCS radio and aligns its own transmit / receive cycle to the GCS radio but it will never transmit anything.
 
 ## Is it possible to use the I2C bus of the flight controller to control the LEDs on my drone?
 

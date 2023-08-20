@@ -44,7 +44,7 @@ The Ardupilot documentation has a great introduction to SiK telemetry radios [he
 
 Skybrush uses SiK radios as a secondary or tertiary control link to send emergency commands. It sends commands one-way from the control station to the drone(s) and does not receive telemetry. [Sidekick](https://skybrush.io/modules/sidekick/) software is required (available with a Skybrush licence).
 
-> [!NOTE]
+> **Note**
 > SiK radios are not really designed for broadcasting; they want to "pair" with each other. Skybrush uses a trick where the duty cycle of each drone radio is pulled down to zero so they are not allowed to transmit. the GCS radio then _thinks_ that it's all alone (as it hears no traffic from the other radios) and starts sending data into the void. The drone radio listens to the traffic from the GCS radio and aligns its own transmit / receive cycle to the GCS radio but it will never transmit anything.
 
 ## Is it possible to use the I2C bus of the flight controller to control the LEDs on my drone?

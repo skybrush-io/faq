@@ -101,3 +101,15 @@ void receiveEvent(int howMany) {
 ```
 
 Note that you will need the FastLED library for the sketch above; you can install it from the **Tools** / **Manage Libraries...** menu in the Arduino IDE.
+
+## What is everyone using for an LED controller. What options do I have?
+
+You have three or four options:
+
+- A custom LED board that takes PWM channels from the flight controller, something like [this](https://github.com/ugcs/ddc/tree/master/Drone_hardware/Fireball_LED_payload).
+
+- An Arduino Nano or something similar, with a small sketch that presents the Arduino as an I2C device towards the flight controller. You can use [this sketch](#is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone).
+
+- NeoPixel or ProfiLED strips. No need for custom hardware, just connect them to a servo output and you are good to go. The downside is that you need a stronger CPU, most likely an STM32H7 as the LED control signals need to be assembled in memory and the more LEDs you have the longer the signal will be. (And you need a spare DMA channel).
+
+- You can tweak an ESP8266 or ESP32 wifi module and use it both to connect to the ground via wifi and to control the LEDs. Our firmware can be configured to send MAVLink commands to the wifi module to control the LEDs, but you need a custom firmware on the ESP to take care of both the wifi connection and the LEDs. You can probably use our mavesp8266 fork as a starting point, but you need to add the LED handling.

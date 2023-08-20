@@ -2,6 +2,7 @@ Welcome to the list of frequently asked questions regarding Skybrush, the open-s
 
 Questions and the corresponding answers are organized into categories. Please visit the page of the category you are interested in:
 
+- [[Overview]] of the Skybrush system
 - [[Building custom drones]] with Skybrush compatibility
 - [[Server setup]]
 - [[Running shows]] with Skybrush Live 

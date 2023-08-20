@@ -1,26 +1,28 @@
 
 ## If I decide to build a custom light show drone, what components are required?
 
-1. A [Flight controller](#what-flight-controller-can-i-use-with-skybrush-firmware) running Ardupilot 
+1. A [flight controller](#what-flight-controller-can-i-use-with-skybrush-firmware) running Ardupilot 
 2. A [WiFi module](#what-wifi-module-do-i-need-on-the-drone) to connect to the ground station running Live
 3. A GPS receiver - [RTK GPS](#should-i-use-rtk-capable-gnss-receivers-for-outdoor-drone-shows) is highly recommended
-4. An [RC Receiver](#what-is-an-rc-receiver-and-why-do-i-need-one-on-each-drone)
+4. An [RC receiver](#what-is-an-rc-receiver-and-why-do-i-need-one-on-each-drone)
 5. A [light fixture](#what-kinds-of-light-fixtures-does-skybrush-firmware-support)
-6. An optional [SiK Radio](#what-is-a-sik-radio-and-what-does-it-do)
+6. An optional [SiK radio](#what-is-a-sik-radio-and-what-does-it-do)
 
-## What Flight Controller can I use with Skybrush firmware?
+## What flight controller can I use with Skybrush firmware?
 
-You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores it's log files on the SD card. Its best to have 2MB of flash memory to accommodate the Skybrush firmware and its requirement to address your LEDs.  
+You will need a flight controller capable of running Ardupilot firmware that includes a micro SD card slot. The SD card has a file system where Skybrush stores the show trajectory. Ardupilot also stores its log files on the SD card. It is best to purchase a flight controller that has 2MB of internal flash memory to accommodate the Skybrush firmware as it is getting increasingly harder to fit the firmware in smaller 1MB boards. Boards with 2MB flash also tend to have more RAM, which can be important if you want to drive many NeoPixel LEDs as the signals needed to drive these LEDs need more RAM.
 
 ## What WiFi module do I need on the drone?
 
-You will need a WiFi module on your drone (in station mode) to connect to the Wifi router on your ground station. WiFi is used to upload flight plans (trajectories) to the drone before a show, and to monitor the fleet via MAVLink telemetry. Most users run mavesp8266 firmware on their WiFi modules. If you require dual-band Wifi, an ESP32 based module may be used.
+You will need a WiFi module on your drone (in station mode) to connect to the WiFi router on your ground station. WiFi is used to upload flight plans (trajectories) to the drone before a show, and to monitor the fleet via MAVLink telemetry. Most users run our fork of the [`mavesp8266` firmware](https://github.com/skybrush-io/mavesp8266) on their WiFi modules.
+
+If you require dual-band Wifi, an ESP32 based module may be used. Note that our firmware fork and the original `mavesp8266` firmware does not support ESP32 officially yet, but we are working on ESP32 compatibility.
 
 ## Should I use RTK capable GNSS receivers for outdoor drone shows?
 
-RTK capability is not strictly required for drone shows, but it is highly recommended. The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
+RTK capability is not strictly required for drone shows, but it is highly recommended (especially if you want to compete with the bigger players on the market who all use RTK corrections). The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
 
-## What is an RC Receiver and why do I need one on each drone?
+## What is an RC receiver and why do I need one on each drone?
 
 An RC (Remote Control) controller is generally used by RC hobbyists to fly RC models such as fixed-wing aircraft and jets, helicopters, and drones. The system uses a controller (held by the pilot who uses sticks and switches to fly the model) connected by radio to a receiver on the model. The Ardupilot documentation describes it [here](https://ardupilot.org/copter/docs/common-rc-systems.html).
 
@@ -36,14 +38,14 @@ One of the challenges of light show drones, is to bind a single RC controller to
 
 Drone show drones typically use multiple RGB or RGBW LEDs. They are driven by the firmware via PWM or [I2C outputs](#is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone).
 
-## What is a SiK Radio, and what does it do?
+## What is a SiK radio, and what does it do?
 
-The Ardupilot documentation has a great introduction to SiK Telemetry Radios [here](https://ardupilot.org/copter/docs/common-sik-telemetry-radio.html#:~:text=Overview,patch%20antenna%20on%20the%20ground). 
+The Ardupilot documentation has a great introduction to SiK telemetry radios [here](https://ardupilot.org/copter/docs/common-sik-telemetry-radio.html#:~:text=Overview,patch%20antenna%20on%20the%20ground). 
 
-Skybrush uses SiK radios as a secondary or tertiary control link to send emergency commands. It sends commands one-way from the control station to the drone(s) and does not receive telemetry.  [Sidekick](https://skybrush.io/modules/sidekick/) software is required (available with a Skybrush licence).
+Skybrush uses SiK radios as a secondary or tertiary control link to send emergency commands. It sends commands one-way from the control station to the drone(s) and does not receive telemetry. [Sidekick](https://skybrush.io/modules/sidekick/) software is required (available with a Skybrush licence).
 
-**NOTE:**
-SiK radios aren't really designed for broadcasting; they want to "pair" with each other. Skybrush uses a trick where the duty cycle of each drone radio is pulled down to zero so they are not allowed to transmit. the GCS radio then _thinks_ that it's all alone (as it hears no traffic from the other radios) and starts sending data into the void. The drone radio listens to the traffic from the GCS radio and aligns its own transmit / receive cycle to the GCS radio but it will never transmit anything.
+> [!NOTE]
+> SiK radios are not really designed for broadcasting; they want to "pair" with each other. Skybrush uses a trick where the duty cycle of each drone radio is pulled down to zero so they are not allowed to transmit. the GCS radio then _thinks_ that it's all alone (as it hears no traffic from the other radios) and starts sending data into the void. The drone radio listens to the traffic from the GCS radio and aligns its own transmit / receive cycle to the GCS radio but it will never transmit anything.
 
 ## Is it possible to use the I2C bus of the flight controller to control the LEDs on my drone?
 
@@ -94,6 +96,4 @@ void receiveEvent(int howMany) {
 }
 ```
 
-Note that you will need the FastLED library for the sketch above; you can
-install it from the **Tools** / **Manage Libraries...** menu in the Arduino
-IDE.
+Note that you will need the FastLED library for the sketch above; you can install it from the **Tools** / **Manage Libraries...** menu in the Arduino IDE.

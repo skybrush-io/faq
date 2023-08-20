@@ -1,5 +1,6 @@
 = Show design
 
+[#what-blender-version-is-skybrush-studio-compatible-with]
 == What Blender version is Skybrush Studio compatible with?
 
 Our commitment is to support full compatibility with the latest LTS release of Blender at all times.

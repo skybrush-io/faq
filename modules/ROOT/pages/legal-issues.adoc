@@ -4,11 +4,13 @@ IMPORTANT: Nothing on this page is to be interpreted as legal advice.
 We are not lawyers.
 If you need professional legal advice on matters related to running drone shows, consult a lawyer.
 
+[#what-are-the-government-regulations-to-fly-a-drone-swarm]
 == What are the government regulations to fly a drone swarm?
 
 The response to this question (just like many of the legal issues) is highly country-specific.
 See the responses below for individual country-specific rules.
 
+[#canada]
 === Canada
 
 In Canada, the national aviation authority is Transport Canada.

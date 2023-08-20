@@ -26,6 +26,8 @@ for file in `ls -v "${WIKI}"/*.md | grep -v "Home.md"`; do
     outfile="${OUTDIR}/pages/$outfname"
 
     bundle exec kramdoc --format=GFM --wrap=ventilate -o "${tmpfname}" $file
+    ruby "${SCRIPT_ROOT}/postprocess_section_headers.rb" "${tmpfname}" >"${tmpfname}.tmp"
+    mv "${tmpfname}.tmp" "${tmpfname}"
 
     if [ -f "partials/header_$outfname" ]; then
         cat "partials/header_$outfname" >>$outfile

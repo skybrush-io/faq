@@ -1,5 +1,6 @@
 = Running shows
 
+[#do-i-need-active-internet-connection-during-drone-light-shows]
 == Do I need active internet connection during drone light shows?
 
 You don't necessarily need active internet connection during drone shows.

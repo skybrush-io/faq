@@ -22,6 +22,10 @@ If you require dual-band Wifi, an ESP32 based module may be used. Note that our 
 
 RTK capability is not strictly required for drone shows, but it is highly recommended (especially if you want to compete with the bigger players on the market who all use RTK corrections). The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
 
+## I thought that only RTK GPS was needed at the base station connected to the computer with Skybrush, as it is the one who corrects the position of the drones. Am I correct?
+
+No, the RTK base station on the ground does not send corrections individually to each drone. What happens is that it assumes that it knows its own position very precisely and it also assumes that any deviation from that hypothetical position in its _current_ measurement is due to atmospheric conditions. _Then_ it  assembles a stream of packets that contain the inferred atmospheric conditions (delays in signal transmissions etc), and then Skybrush sends that stream to the drones. At that point, it is the responsibility of the drone to interpret the atmospheric conditions _and_ correct its own measurements. So, the GPS unit on the drone does some heavy computations as well, that's why you need an RTK-enabled GPS on the drone. A standard non-RTK GPS won't know what to do with the corrections.
+
 ## What is an RC receiver and why do I need one on each drone?
 
 An RC (Remote Control) controller is generally used by RC hobbyists to fly RC models such as fixed-wing aircraft and jets, helicopters, and drones. The system uses a controller (held by the pilot who uses sticks and switches to fly the model) connected by radio to a receiver on the model. The Ardupilot documentation describes it [here](https://ardupilot.org/copter/docs/common-rc-systems.html).

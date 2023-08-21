@@ -2,7 +2,8 @@
 
 For outdoor shows, **Skybrush** works with practically any drone that is able to run the open-source [ArduCopter](https://ardupilot.org) firmware. We use a modified version of ArduCopter and we publish the source code of the modified firmware [on Github](https://github.com/skybrush-io/ardupilot). You need to compile and install our modified version on your own drone in order to ensure full compatibility. We publish pre-compiled versions of the firmware for the most common autopilots, so if your drone uses one of these autopilots, you can simply use our pre-compiled version instead of compiling on your own.
 
-When working with our firmware fork, make sure to check out one of the `CMCopter-...` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
+> **Important**
+> When working with our firmware fork, make sure to check out one of the `CMCopter-...` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
 
 
 ## What sort of indoor drones is Skybrush compatible with?

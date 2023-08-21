@@ -8,7 +8,7 @@ We use a modified version of ArduCopter and we publish the source code of the mo
 You need to compile and install our modified version on your own drone in order to ensure full compatibility.
 We publish pre-compiled versions of the firmware for the most common autopilots, so if your drone uses one of these autopilots, you can simply use our pre-compiled version instead of compiling on your own.
 
-When working with our firmware fork, make sure to check out one of the `+CMCopter-...+` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
+IMPORTANT: When working with our firmware fork, make sure to check out one of the `+CMCopter-...+` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
 
 [#what-sort-of-indoor-drones-is-skybrush-compatible-with]
 == What sort of indoor drones is Skybrush compatible with?

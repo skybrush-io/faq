@@ -1,5 +1,21 @@
+## What sort of outdoor drones is Skybrush compatible with?
+
+For outdoor shows, **Skybrush** works with practically any drone that is able to run the open-source [ArduCopter](https://ardupilot.org) firmware. We use a modified version of ArduCopter and we publish the source code of the modified firmware [on Github](https://github.com/skybrush-io/ardupilot). You need to compile and install our modified version on your own drone in order to ensure full compatibility. We publish pre-compiled versions of the firmware for the most common autopilots, so if your drone uses one of these autopilots, you can simply use our pre-compiled version instead of compiling on your own.
+
+> **Important**
+> When working with our firmware fork, make sure to check out one of the `CMCopter-...` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
+
+
+## What sort of indoor drones is Skybrush compatible with?
+
+For indoor shows, **Skybrush** currently supports drones based on the flight controllers of the [Crazyflie](https://bitcraze.io) ecosystem, both the "stock" Crazyflie and larger drones based on the Crazyflie Bolt. We use a modified version of the Crazyflie firmware and we publish its source code [on Github](https://github.com/skybrush-io/crazyflie-firmware) as well. You need to compile and install our modified version on your drone in order to ensure full compatibility. We publish pre-compiled versions of the firmware for the stock Crazyflie and several suggested Bolt-based builds.
+
+
 
 ## If I decide to build a custom light show drone, what components are required?
+
+If you wish to make your drones compatible with Skybrush, contact us to do it together to become trusted partners! If you wish to try it on your own, these are the basic components needed:
+
 
 1. A [flight controller](#what-flight-controller-can-i-use-with-skybrush-firmware) running Ardupilot 
 2. A [WiFi module](#what-wifi-module-do-i-need-on-the-drone) to connect to the ground station running Live
@@ -18,9 +34,15 @@ You will need a WiFi module on your drone (in station mode) to connect to the Wi
 
 If you require dual-band Wifi, an ESP32 based module may be used. Note that our firmware fork and the original `mavesp8266` firmware does not support ESP32 officially yet, but we are working on ESP32 compatibility.
 
+You can also opt for using 4G/5G connectivity with VPN, but then you need a dedicated onboard computer to handle the 4G/5G connection and the VPN itself as the autopilot boards are not equipped for handling VPN connections.
+
 ## Should I use RTK capable GNSS receivers for outdoor drone shows?
 
 RTK capability is not strictly required for drone shows, but it is highly recommended (especially if you want to compete with the bigger players on the market who all use RTK corrections). The 2-3 m positioning accuracy of regular GNSS receivers can drop down to 1-10 cm using RTK corrections, which increases the accuracy and quality of the show, reduces the required minimal distance between drones and - in case of stable GNSS+RTK reception - increases the overall safety of the system.
+
+Note that when using RTK receivers, you also need an RTK base station or another data source for RTK corrections at the place of the flight.
+
+For testing purposes, it is entirely possible to fly without RTK; the formations will not be as accurate (especially in the vertical direction) and you need a bit larger safety distance between drones, though.
 
 ## I thought that only RTK GPS was needed at the base station connected to the computer with Skybrush, as it is the one who corrects the position of the drones. Am I correct?
 
@@ -40,7 +62,8 @@ One of the challenges of light show drones, is to bind a single RC controller to
 
 ## What kinds of light fixtures does Skybrush firmware support?
 
-Drone show drones typically use multiple RGB or RGBW LEDs. They are driven by the firmware via PWM or [I2C outputs](#is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone).
+All drones should be equipped with a strong, bright RGBW LED light or many smaller LEDs distributed all along the body of the drone. There are multiple options to connect the LEDs; the easiest is to use three or four PWM outputs of the autopilot to drive the red, green, blue (and optionally the white) channels of the LED, but our firmware also supports driving NeoPixel (WS2812) or ProfiLED LED strips with a single serial line (which means less wiring), and there is also an option for [I2C-connected LED modules](#is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone).
+
 
 ## What is a SiK radio, and what does it do?
 
@@ -113,3 +136,13 @@ You have three or four options:
 - NeoPixel or ProfiLED strips. No need for custom hardware, just connect them to a servo output and you are good to go. The downside is that you need a stronger CPU, most likely an STM32H7 as the LED control signals need to be assembled in memory and the more LEDs you have the longer the signal will be. (And you need a spare DMA channel).
 
 - You can tweak an ESP8266 or ESP32 wifi module and use it both to connect to the ground via wifi and to control the LEDs. Our firmware can be configured to send MAVLink commands to the wifi module to control the LEDs, but you need a custom firmware on the ESP to take care of both the wifi connection and the LEDs. You can probably use our mavesp8266 fork as a starting point, but you need to add the LED handling.
+
+## Can you help me in building a drone compatible with Skybrush?
+
+[CollMot Robotics Ltd.](https://collmot.com) provides enterprise-grade consultancy services for Skybrush, which also covers the case of building show drones. Contact us for more details and pricing information, lets cooperate!
+
+## Can I bundle Skybrush with the drones that I sell?
+
+Yes, you can. You are allowed to redistribute the pre-compiled binaries for Skybrush components, but note that these pre-compiled binaries may include limitations in the number of drones that the software is willing to handle simultaneously, or other features of the software. You may also compile Skybrush from its source code, and you are then allowed to redistribute the unrestricted binaries. However, note that we cannot provide support beyond the standard community support for your customers for free.
+
+Contact us if you would like us to be responsible for supporting your customers in using Skybrush beyond community support as part of our trusted partner program.

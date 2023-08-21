@@ -1,6 +1,5 @@
 = Running shows
 
-[#number-of-drones]
 [#how-many-drones-can-skybrush-handle-at-the-same-time]
 == How many drones can Skybrush handle at the same time?
 
@@ -12,7 +11,6 @@ If you need more than that, you have to use multiple routers in parallel and con
 Finally, please note that the pre-compiled community version of Skybrush Server is limited to handle max 10 drones.
 To enjoy the full extent of Skybrush with unlimited drone number and many other pro features, we encourage you to buy a professional licence.
 
-[#using-skybrush-limitations]
 [#are-there-any-built-in-limitations-in-skybrush]
 == Are there any built-in limitations in Skybrush?
 

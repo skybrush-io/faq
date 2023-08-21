@@ -1,6 +1,5 @@
 = Building custom drones
 
-[#hw-compatibility-outdoor]
 [#what-sort-of-outdoor-drones-is-skybrush-compatible-with]
 == What sort of outdoor drones is Skybrush compatible with?
 
@@ -11,7 +10,6 @@ We publish pre-compiled versions of the firmware for the most common autopilots,
 
 When working with our firmware fork, make sure to check out one of the `+CMCopter-...+` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
 
-[#hw-compatibility-indoor]
 [#what-sort-of-indoor-drones-is-skybrush-compatible-with]
 == What sort of indoor drones is Skybrush compatible with?
 
@@ -160,14 +158,12 @@ void receiveEvent(int howMany) {
 Note that you will need the FastLED library for the sketch above;
 you can install it from the *Tools* / *Manage Libraries...* menu in the Arduino IDE.
 
-[#hw-compatibility-custom-drones]
 [#can-you-help-me-in-building-a-drone-compatible-with-skybrush]
 == Can you help me in building a drone compatible with Skybrush?
 
 https://collmot.com[CollMot Robotics Ltd.] provides enterprise-grade consultancy services for Skybrush, which also covers the case of building show drones.
 Contact us for more details and pricing information, lets cooperate!
 
-[#hw-compatibility-sell-skybrush]
 [#can-i-bundle-skybrush-with-the-drones-that-i-sell]
 == Can I bundle Skybrush with the drones that I sell?
 

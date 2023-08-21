@@ -1,16 +1,13 @@
 = Legal issues
 
-____
-*Disclaimer* Nothing on this page is to be interpreted as legal advice.
+IMPORTANT: Nothing on this page is to be interpreted as legal advice.
 We are not lawyers.
 If you need professional legal advice on matters related to running drone shows, consult a lawyer.
 This page occasionally discusses topics related to the GNU General Public License.
 While the information we provide here is accurate to the best of our knowledge, the information is provided "as is", without any warranty.
 If you want legal advice about the GNU GPL or other free/open source licenses please consult a lawyer.
 Also, if you think we are mistaken in our interpretation of the GNU GPL or other legal issues, please let us know.
-____
 
-[#gnu-gpl-overview]
 [#can-you-explain-the-gnu-general-public-licence-in-a-nutshell]
 == Can you explain the GNU General Public Licence in a nutshell?
 
@@ -21,14 +18,12 @@ The only restriction is that if you _distribute_ changed versions of Skybrush, y
 
 You can find more detailed explanations of the GNU GPL v3 on https://choosealicense.com/licenses/gpl-3.0/[choosealicense.com] or on https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)[TLDRLegal].
 
-[#gnu-gpl-show-content]
 [#do-i-need-to-worry-about-the-gnu-gpl-if-i-create-show-content-using-skybrush]
 == Do I need to worry about the GNU GPL if I create show content using Skybrush?
 
 No, you don't.
 Show files (`.skyc` files) are considered _outputs_ and you are free to license or sell them in any way you want.
 
-[#gnu-gpl-own-branding]
 [#can-i-distribute-skybrush-under-my-own-branding]
 == Can I distribute Skybrush under my own branding?
 
@@ -36,7 +31,6 @@ Yes, you can compile and distribute Skybrush under your own branding if you comp
 You are _not_ allowed to remove or change Skybrush's original copyright notices or make claims that you created Skybrush.
 You can also not make claims that projects that others made with the official Skybrush releases were made using your version of Skybrush.
 
-[#using-skybrush-commercially]
 [#can-i-use-skybrush-commercially]
 == Can I use Skybrush commercially?
 
@@ -48,7 +42,6 @@ If you did not make any modifications to Skybrush, it is enough to name Skybrush
 If you _did_ make any modifications, you are obliged to publish these modifications -- but in that case, it would probably be easier to ask us to include your modifications in the next version, wouldn't it?
 :)
 
-[#extending-skybrush-internal-use]
 [#i-have-written-an-extension-for-skybrush-that-is-used-internally-within-my-company-do-i-need-to-release-the-source-code]
 == I have written an extension for Skybrush that is used internally within my company. Do I need to release the source code?
 
@@ -57,7 +50,6 @@ You can keep the source code private as long as you are not _distributing_ the e
 Providing services based on the extension is acceptable as long as the extension is not distributed.
 However, if you distribute the extension to your customers, you are legally required to disclose the source code to your customers, who may then decide to redistribute it on their own.
 
-[#extending-skybrush-external-use]
 [#i-have-written-an-extension-for-skybrush-that-is-provided-to-my-customers-as-part-of-a-customized-skybrush-build-do-i-need-to-release-the-source-code]
 == I have written an extension for Skybrush that is provided to my customers as part of a customized Skybrush build. Do I need to release the source code?
 
@@ -66,7 +58,6 @@ There are certain exceptions to this rule;
 for instance, if Skybrush communicates with your extension in a manner that the two codebases are running in separate processes and exchange information only using certain standard data structures, then the GNU GPL does not apply to you.
 Please consult a lawyer to be on the safe side.
 
-[#extending-skybrush-release-bugfixes]
 [#i-have-modified-the-skybrush-firmware-to-add-a-missing-feature-or-to-fix-a-bug-do-i-need-to-release-the-source-code-of-the-feature-or-fix]
 == I have modified the Skybrush firmware to add a missing feature or to fix a bug. Do I need to release the source code of the feature or fix?
 

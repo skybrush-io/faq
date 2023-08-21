@@ -11,6 +11,24 @@
   "contributorsPerLine": 7,
   "contributors": [
     {
+      "login": "ntamas",
+      "name": "Tamás Nepusz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/195637?v=4",
+      "profile": "https://collmot.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "vasarhelyi",
+      "name": "Gábor Vásárhelyi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8138056?v=4",
+      "profile": "https://github.com/vasarhelyi",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
       "login": "stan-humphries",
       "name": "Stan Humphries",
       "avatar_url": "https://avatars.githubusercontent.com/u/78163707?v=4",

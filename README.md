@@ -15,11 +15,11 @@ edits!
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/stan-humphries"><img src="https://avatars.githubusercontent.com/u/78163707?v=4?s=100" width="100px;" alt="Stan Humphries"/><br /><sub><b>Stan Humphries</b></sub></a><br /><a href="https://github.com/skybrush-io/faq/commits?author=stan-humphries" title="Documentation">📖</a></td>
-    </tr>
-  </tbody>
+  <tr>
+    <td align="center"><a href="https://collmot.com/"><img src="https://avatars.githubusercontent.com/u/195637?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tamás Nepusz</b></sub></a><br /><a href="https://github.com/skybrush-io/faq/commits?author=ntamas" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/vasarhelyi"><img src="https://avatars.githubusercontent.com/u/8138056?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gábor Vásárhelyi</b></sub></a><br /><a href="https://github.com/skybrush-io/faq/commits?author=vasarhelyi" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/stan-humphries"><img src="https://avatars.githubusercontent.com/u/78163707?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Stan Humphries</b></sub></a><br /><a href="https://github.com/skybrush-io/faq/commits?author=stan-humphries" title="Documentation">📖</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->

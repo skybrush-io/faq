@@ -1,42 +1,42 @@
-> **Disclaimer**
+> **Important**
 > Nothing on this page is to be interpreted as legal advice. We are not lawyers. If you need professional legal advice on matters related to running drone shows, consult a lawyer.
 > This page occasionally discusses topics related to the GNU General Public License. While the information we provide here is accurate to the best of our knowledge, the information is provided "as is", without any warranty. If you want legal advice about the GNU GPL or other free/open source licenses please consult a lawyer.
 > Also, if you think we are mistaken in our interpretation of the GNU GPL or other legal issues, please let us know.
 
 
-## Can you explain the GNU General Public Licence in a nutshell? {#gnu-gpl-overview}
+## Can you explain the GNU General Public Licence in a nutshell?
 
 Most Skybrush components use the GNU GPL licence. Under the terms of this licence, you are free to use Skybrush for any purpose, and you are also allowed to modify and distribute it, with or without your own modifications. We publish the source code of Skybrush components so you can build the software on your own. The only restriction is that if you _distribute_ changed versions of Skybrush, you are obliged to publish your modifications under the GNU GPL as well.
 
 You can find more detailed explanations of the GNU GPL v3 on [choosealicense.com](https://choosealicense.com/licenses/gpl-3.0/) or on [TLDRLegal](<https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)>).
 
 
-## Do I need to worry about the GNU GPL if I create show content using Skybrush? {#gnu-gpl-show-content}
+## Do I need to worry about the GNU GPL if I create show content using Skybrush?
 
 No, you don't. Show files (`.skyc` files) are considered _outputs_ and you are free to license or sell them in any way you want.
 
 
-## Can I distribute Skybrush under my own branding? {#gnu-gpl-own-branding}
+## Can I distribute Skybrush under my own branding?
 
 Yes, you can compile and distribute Skybrush under your own branding if you compile it from source code on your own _and you also offer it according to the conditions of the GNU GPL_ to your own clients. You are _not_ allowed to remove or change Skybrush's original copyright notices or make claims that you created Skybrush. You can also not make claims that projects that others made with the official Skybrush releases were made using your version of Skybrush.
 
 
-## Can I use Skybrush commercially? {#using-skybrush-commercially}
+## Can I use Skybrush commercially?
 
 Yes, you can. Show content that you make with Skybrush is your own property and you are free to sell or license it in any way you want to. Shows performed with Skybrush and their video or audio recordings also remain yours. If you are a hardware manufacturer and you distribute Skybrush with your own hardware, you should be aware of the obligations of the GPL, namely that you have to make the source code of the version that you distribute available as well. If you did not make any modifications to Skybrush, it is enough to name Skybrush explicitly in your documentation and link to our homepage so your customers can get access to the source code. If you _did_ make any modifications, you are obliged to publish these modifications -- but in that case, it would probably be easier to ask us to include your modifications in the next version, wouldn't it? :)
 
 
-## I have written an extension for Skybrush that is used internally within my company. Do I need to release the source code? {#extending-skybrush-internal-use}
+## I have written an extension for Skybrush that is used internally within my company. Do I need to release the source code?
 
 No, you do not. You can keep the source code private as long as you are not _distributing_ the extension to your customers. Providing services based on the extension is acceptable as long as the extension is not distributed. However, if you distribute the extension to your customers, you are legally required to disclose the source code to your customers, who may then decide to redistribute it on their own.
 
 
-## I have written an extension for Skybrush that is provided to my customers as part of a customized Skybrush build. Do I need to release the source code? {#extending-skybrush-external-use}
+## I have written an extension for Skybrush that is provided to my customers as part of a customized Skybrush build. Do I need to release the source code?
 
 Yes, you are legally required to make the source code available to your customers under the conditions of the GNU GPL, who may then decide to redistribute the source code on their own. There are certain exceptions to this rule; for instance, if Skybrush communicates with your extension in a manner that the two codebases are running in separate processes and exchange information only using certain standard data structures, then the GNU GPL does not apply to you. Please consult a lawyer to be on the safe side.
 
 
-## I have modified the Skybrush firmware to add a missing feature or to fix a bug. Do I need to release the source code of the feature or fix? {#extending-skybrush-release-bugfixes}
+## I have modified the Skybrush firmware to add a missing feature or to fix a bug. Do I need to release the source code of the feature or fix?
 
 As long as you only use the firmware internally and you do not distribute it in binary form to others, you are not required to disclose the source code. As soon as you start distributing the modified firmware in binary form, you are legally obliged to distribute the source code with it. But in either case, wouldn't it be easier to contribute your fix or feature to the community so we can adopt it in the official Skybrush firmware and rid you of the burden of porting it forward to new Skybrush firmware releases? :)
 

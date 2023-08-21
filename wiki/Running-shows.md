@@ -1,4 +1,4 @@
-## How many drones can Skybrush handle at the same time? {#number-of-drones}
+## How many drones can Skybrush handle at the same time?
 
 There are no programmatic limits on the number of drones that Skybrush itself can handle, provided that all other components of your operation (laptops, network routers, radio transmitters, chargers, logistics and so on) can also handle the drone count that you have in mind. 
 
@@ -7,7 +7,7 @@ A soft limitation occurs when you are using MAVLink-based drones, as their ID st
 Finally, please note that the pre-compiled community version of Skybrush Server is limited to handle max 10 drones. To enjoy the full extent of Skybrush with unlimited drone number and many other pro features, we encourage you to buy a professional licence.
 
 
-## Are there any built-in limitations in Skybrush? {#using-skybrush-limitations}
+## Are there any built-in limitations in Skybrush?
 
 Binaries (i.e. pre-compiled versions) of Skybrush that we distribute _may_ have built-in limitations on the number of drones that the software is willing to handle simultaneously, or other features of the software. The current limitations are always displayed when you start Skybrush Live or Skybrush Server. You can remove the limitations either by compiling Skybrush on your own from the source code, or by [buying a professional licence](https://skybrush.io/shop/) or [subscribing to an enterprise support tier](https://skybrush.io/support/), which entitles you to pre-compiled binaries without the limitations, according to contractual terms.
 

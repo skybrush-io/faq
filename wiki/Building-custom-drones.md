@@ -1,11 +1,11 @@
-## What sort of outdoor drones is Skybrush compatible with? {#hw-compatibility-outdoor}
+## What sort of outdoor drones is Skybrush compatible with?
 
 For outdoor shows, **Skybrush** works with practically any drone that is able to run the open-source [ArduCopter](https://ardupilot.org) firmware. We use a modified version of ArduCopter and we publish the source code of the modified firmware [on Github](https://github.com/skybrush-io/ardupilot). You need to compile and install our modified version on your own drone in order to ensure full compatibility. We publish pre-compiled versions of the firmware for the most common autopilots, so if your drone uses one of these autopilots, you can simply use our pre-compiled version instead of compiling on your own.
 
 When working with our firmware fork, make sure to check out one of the `CMCopter-...` branches with the appropriate upstream ArduPilot version number as the `master` branch simply tracks ArduPilot's `master` branch.
 
 
-## What sort of indoor drones is Skybrush compatible with? {#hw-compatibility-indoor}
+## What sort of indoor drones is Skybrush compatible with?
 
 For indoor shows, **Skybrush** currently supports drones based on the flight controllers of the [Crazyflie](https://bitcraze.io) ecosystem, both the "stock" Crazyflie and larger drones based on the Crazyflie Bolt. We use a modified version of the Crazyflie firmware and we publish its source code [on Github](https://github.com/skybrush-io/crazyflie-firmware) as well. You need to compile and install our modified version on your drone in order to ensure full compatibility. We publish pre-compiled versions of the firmware for the stock Crazyflie and several suggested Bolt-based builds.
 
@@ -121,12 +121,12 @@ void receiveEvent(int howMany) {
 Note that you will need the FastLED library for the sketch above; you can install it from the **Tools** / **Manage Libraries...** menu in the Arduino IDE.
 
 
-## Can you help me in building a drone compatible with Skybrush? {#hw-compatibility-custom-drones}
+## Can you help me in building a drone compatible with Skybrush?
 
 [CollMot Robotics Ltd.](https://collmot.com) provides enterprise-grade consultancy services for Skybrush, which also covers the case of building show drones. Contact us for more details and pricing information, lets cooperate!
 
 
-## Can I bundle Skybrush with the drones that I sell? {#hw-compatibility-sell-skybrush}
+## Can I bundle Skybrush with the drones that I sell?
 
 Yes, you can. You are allowed to redistribute the pre-compiled binaries for Skybrush components, but note that these pre-compiled binaries may include limitations in the number of drones that the software is willing to handle simultaneously, or other features of the software. You may also compile Skybrush from its source code, and you are then allowed to redistribute the unrestricted binaries. However, note that we cannot provide support beyond the standard community support for your customers for free.
 

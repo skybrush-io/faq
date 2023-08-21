@@ -1,7 +1,7 @@
 
 ## Skybrush drone light shows are magic! Can you give me a birds-eye overview of how a drone show works?
 
-During the show, each drone flies its own unique flight plan (trajectory). The drones are not being controlled in real time via a radio link to the Control Station. Nor are they communicating between each other. However triple-redundant command and control links allow the operator to take immediate control of any or all drones.
+During the show, each drone flies its own unique flight plan (trajectory). The drones are not being controlled in real time via a radio link to the Ground Control Station (GCS). Nor are they communicating between each other. However triple-redundant command and control links allow the operator to take immediate control of any or all drones.
 
 Because they are flying pre-programmed trajectories and not dependant on a radio link, problems with radio interference, bandwidth saturation or range are eliminated.
 
@@ -12,11 +12,13 @@ Synchronized pre-programmed flight creates these challenges:
 - Creating a [unique synchronized trajectory](#how-are-the-synchronized-trajectories-created-and-how-are-collisions-avoided) for each drone (the choreography), and
 - Developing appropriate [procedures to deal with emergencies](#if-the-drones-are-flying-pre-programmed-trajectories-how-do-you-interrupt-a-flight-to-handle-unforseen-circumstances).
 
+
 ## How are the drones slaved to a common timeline if they are not communicating among each other?
 
 The GNSS (Global Navigation Satellite System) works by timing signals from satellites at nano-second accuracy, making GNSS receiver clocks incredibly precise.
 
 Accurate timing of events across the fleet is achieved by synchronizing each drone’s flight events (trajectories and light effects) to the common GNSS clock time.
+
 
 ## How do the drones achieve such amazing position accuracy?
 
@@ -27,9 +29,10 @@ For outdoor drone shows, the synchronized flight system [most often](https://doc
 
 For indoor shows, a local indoor positioning system is used.
 
-## How are the synchronized trajectories created, and how are collisions avoided?
 
-The show's 3D choreography is created using [Blender](https://www.blender.org) and the [Skybrush Studio](https://doc.collmot.com/public/skybrush-studio-for-blender/latest/index.html) add-on. Both Blender and Studio are open-source software.
+## How are the synchronized trajectories created, and how are collisions prevented at design time?
+
+The show's 3D choreography is created using [Blender](https://www.blender.org) and the [Skybrush Studio for Blender](https://doc.collmot.com/public/skybrush-studio-for-blender/latest/index.html) add-on. Both Blender and Studio are open-source software.
 
 Blender’s standard tools are used to create static or animated formations of drones. Skybrush Studio is used to:
 
@@ -38,6 +41,7 @@ Blender’s standard tools are used to create static or animated formations of d
 - Ensure that trajectories (accelerations and velocities etc) are within your drones' real-world physical capabilities.
 - Once the flight choreography is prepared, Skybrush Studio sends each drone’s position (in local X Y Z coordinates), velocity and lighting commands for each frame to a compiled flight plan file.
 - The compiled flight plan is extensively tested in [Skybrush Viewer](https://skybrush.io/modules/viewer/), and using simulated drones before being flown by the physical drone fleet.
+
 
 ## If the drones are flying pre-programmed trajectories, how do you interrupt a flight to handle unforseen circumstances?
 

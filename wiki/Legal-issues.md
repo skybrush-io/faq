@@ -1,6 +1,8 @@
 > **Important**
 > Nothing on this page is to be interpreted as legal advice. We are not lawyers. If you need professional legal advice on matters related to running drone shows, consult a lawyer.
+>
 > This page occasionally discusses topics related to the GNU General Public License. While the information we provide here is accurate to the best of our knowledge, the information is provided "as is", without any warranty. If you want legal advice about the GNU GPL or other free/open source licenses please consult a lawyer.
+>
 > Also, if you think we are mistaken in our interpretation of the GNU GPL or other legal issues, please let us know.
 
 

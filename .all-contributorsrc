@@ -2,5 +2,22 @@
   "projectName": "faq",
   "projectOwner": "skybrush-io",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "stan-humphries",
+      "name": "Stan Humphries",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78163707?v=4",
+      "profile": "https://github.com/stan-humphries",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
 }

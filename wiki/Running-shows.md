@@ -20,3 +20,13 @@ By subscribing to our paid services and products, you are helping us financially
 
 You don’t necessarily need active internet connection during drone shows. You should be connected to the local network of the drones created by your dedicated router to access them from Skybrush Live. However, there are a few handy features in Skybrush Live that require access to data on the internet, such as the weather widget that attempts to retreive latest Kp-index or any tile server that provides your map tiles. For what it's worth, you can always buy a 4G mobile wifi dongle and connect it via USB to your laptop to also have internet connection along with your local network connection. 
 
+
+## Can you tell me more about what happens when Live uploads show data to the drones during the pre-flight preparation?
+
+1. Show data and the geofence are uploaded at the same time, in a single transaction. "Show data" basically includes the trajectories, the show origin, the show orientation and the geofence. Notably, the start time and the start method (RC or automatic) are _not_ part of the upload -- more about this later.
+
+2. When you upload new show data for a drone, the old show data gets removed. The geofence is also replaced when uploading new show data.
+
+3. It is possible to upload show data to only a sub-selection of drones from Live; in this case, the new show data gets uploaded to the selected drones, but any show data on drones that were not part of the upload transaction will not be touched. This is helpful in last-minute changes before a show when you replace a faulty drone with a new one -- you only need to upload the trajectory to the new drone and not touch the rest
+
+4. Start time and start method are broadcast separately to the drones in a data packet once per second. This allows you to change the start time and the start method _after_ the upload, without having to re-upload the entire show data. But this also means that _all_ drones that you turn on will receive the start time and the start method, _and_ if they have valid show data _and_ happen to be at the right takeoff coordinate for that show data, they will start flying when the time comes. So, it is advised to turn off those drones that are not participating in the current flight, just to avoid the rare occasion that you happen to have a previous show trajectory on the drone and the drone is coincidentally placed at the right takeoff position for that show.

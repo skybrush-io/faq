@@ -1,0 +1,62 @@
+= Overview
+
+[#skybrush-drone-light-shows-are-magic-can-you-give-me-a-birds-eye-overview-of-how-a-drone-show-works]
+== Skybrush drone light shows are magic! Can you give me a birds-eye overview of how a drone show works?
+
+During the show, each drone flies its own unique flight plan (trajectory).
+The drones are not being controlled in real time via a radio link to the Ground Control Station (GCS).
+Nor are they communicating between each other.
+However triple-redundant command and control links allow the operator to take immediate control of any or all drones.
+
+Because they are flying pre-programmed trajectories and not dependant on a radio link, problems with radio interference, bandwidth saturation or range are eliminated.
+
+Synchronized pre-programmed flight creates these challenges:
+
+* Accurately <<how-are-the-drones-slaved-to-a-common-timeline-if-they-are-not-communicating-among-each-other,synchronizing events>> across the fleet to a common timeline,
+* Ensuring the required <<how-do-the-drones-achieve-such-amazing-position-accuracy,3D position accuracy>>,
+* Creating a <<how-are-the-synchronized-trajectories-created-and-how-are-collisions-avoided,unique synchronized trajectory>> for each drone (the choreography), and
+* Developing appropriate <<if-the-drones-are-flying-pre-programmed-trajectories-how-do-you-interrupt-a-flight-to-handle-unforseen-circumstances,procedures to deal with emergencies>>.
+
+[#how-are-the-drones-slaved-to-a-common-timeline-if-they-are-not-communicating-among-each-other]
+== How are the drones slaved to a common timeline if they are not communicating among each other?
+
+The GNSS (Global Navigation Satellite System) works by timing signals from satellites at nano-second accuracy, making GNSS receiver clocks incredibly precise.
+
+Accurate timing of events across the fleet is achieved by synchronizing each drone's flight events (trajectories and light effects) to the common GNSS clock time.
+
+[#how-do-the-drones-achieve-such-amazing-position-accuracy]
+== How do the drones achieve such amazing position accuracy?
+
+For outdoor drone shows, the synchronized flight system https://doc.collmot.com/public/faq/latest/building-custom-drones.html#should-i-use-rtk-capable-gnss-receivers-for-outdoor-drone-shows[most often] uses RTK (Real Time Kinematics) GPS:
+
+* The Control Station is connected to an RTK base station, which _surveys in_ to achieve very high 3D position accuracy.
+* Each drone carries an RTK rover GPS which receives a correction data stream from the Control Station base station via WiFi to correct for atmospheric and other errors.
+
+For indoor shows, a local indoor positioning system is used.
+
+[#how-are-the-synchronized-trajectories-created-and-how-are-collisions-prevented-at-design-time]
+== How are the synchronized trajectories created, and how are collisions prevented at design time?
+
+The show's 3D choreography is created using https://www.blender.org[Blender] and the https://doc.collmot.com/public/skybrush-studio-for-blender/latest/index.html[Skybrush Studio for Blender] add-on.
+Both Blender and Studio are open-source software.
+
+Blender's standard tools are used to create static or animated formations of drones.
+Skybrush Studio is used to:
+
+* Ensure adequate separation between the drones in the formations,
+* Calculate collision-free transitions between these formations,
+* Ensure that trajectories (accelerations and velocities etc) are within your drones' real-world physical capabilities.
+* Once the flight choreography is prepared, Skybrush Studio sends each drone's position (in local X Y Z coordinates), velocity and lighting commands for each frame to a compiled flight plan file.
+* The compiled flight plan is extensively tested in https://skybrush.io/modules/viewer/[Skybrush Viewer], and using simulated drones before being flown by the physical drone fleet.
+
+[#if-the-drones-are-flying-pre-programmed-trajectories-how-do-you-interrupt-a-flight-to-handle-unforseen-circumstances]
+== If the drones are flying pre-programmed trajectories, how do you interrupt a flight to handle unforseen circumstances?
+
+Operators have 3 independent command and control links which may be used to interrupt a flight:
+
+. Skybrush Live running on the main Ground Station and communicating with the fleet via WiFi.
+. Skybrush Sidekick running on an separate computer and capable of sending one-way commands to any or all drones via a separate radio link, and
+. RC control capable of sending one way commands to the entire fleet.
+
+Each operator must understand their own setup and develop https://doc.collmot.com/public/faq/latest/security.html[security procedures].
+Standard and emergency operating procedures will be required by the your https://doc.collmot.com/public/faq/latest/legal-issues.html[national aviation authority] when you apply for authorization to fly drone shows in your country.

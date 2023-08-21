@@ -63,6 +63,17 @@ Note that when using RTK receivers, you also need an RTK base station or another
 For testing purposes, it is entirely possible to fly without RTK;
 the formations will not be as accurate (especially in the vertical direction) and you need a bit larger safety distance between drones, though.
 
+[#do-i-need-rtk-gps-both-in-the-gcs-and-on-the-drones]
+== Do I need RTK GPS both in the GCS and on the drones?
+
+Yes, you need RTK-capable GPS receivers on both sides.
+The RTK base station is needed to _send_ RTK corrections to the drone while the RTK GNSS receiver on the drone is needed to _receive_ the corrections.
+The RTK base station assumes that it knows its own position very precisely and it also assumes that any deviation from that hypothetical position in its _current_ measurement is due to atmospheric conditions.
+_Then_ it  assembles a stream of packets that contain the inferred atmospheric conditions (delays in signal transmissions etc), and then Skybrush sends that stream to the drones.
+At that point, it is the responsibility of the drone to interpret the atmospheric conditions _and_ correct its own measurements.
+So, the GPS unit on the drone does some heavy computations as well, that's why you need an RTK-enabled GPS on the drone.
+A standard non-RTK GPS won't know what to do with the corrections, and, of course, a base without RTK will not be able to generate corrections.
+
 [#what-is-an-rc-receiver-and-why-do-i-need-one-on-each-drone]
 == What is an RC receiver and why do I need one on each drone?
 
@@ -81,9 +92,20 @@ One of the challenges of light show drones, is to bind a single RC controller to
 [#what-kinds-of-light-fixtures-does-skybrush-firmware-support]
 == What kinds of light fixtures does Skybrush firmware support?
 
-All drones should be equipped with a strong, bright RGBW LED light or many smaller LEDs distributed all along the body of the drone.
-There are multiple options to connect the LEDs;
-the easiest is to use three or four PWM outputs of the autopilot to drive the red, green, blue (and optionally the white) channels of the LED, but our firmware also supports driving NeoPixel (WS2812) or ProfiLED LED strips with a single serial line (which means less wiring), and there is also an option for <<is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone,I2C-connected LED modules>>.
+All drones should be equipped with a strong, bright RGBW LED light or many smaller LEDs distributed all along the body of the drone, controlled by the same color input in parallel.
+There are multiple options to connect the LEDs:
+
+* the easiest is to use three or four PWM outputs of the autopilot to drive the red, green, blue (and optionally the white) channels of the LED using a custom LED board, something like https://github.com/ugcs/ddc/tree/master/Drone_hardware/Fireball_LED_payload[this].
+* our firmware supports driving NeoPixel (WS2812) or ProfiLED LED strips with a single serial line (which means less wiring);
+no need for custom hardware, just connect the LED strip to a servo output and you are good to go.
+The downside is that you need a stronger CPU, most likely an STM32H7 as the LED control signals need to be assembled in memory and the more LEDs you have the longer the signal will be.
+(And you need a spare DMA channel).
+* there is also an option for I2C-connected LED modules.
+You can use an Arduino Nano or something similar, with a small sketch that presents the Arduino as an I2C device towards the flight controller.
+You can use <<is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone,this sketch>>.
+* You can tweak an ESP8266 or ESP32 wifi module and use it both to connect to the ground via wifi and to control the LEDs.
+Our firmware can be configured to send MAVLink commands to the wifi module to control the LEDs, but you need a custom firmware on the ESP to take care of both the wifi connection and the LEDs.
+You can probably use our mavesp8266 fork as a starting point, but you need to add the LED handling.
 
 [#what-is-a-sik-radio-and-what-does-it-do]
 == What is a SiK radio, and what does it do?

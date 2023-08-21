@@ -23,16 +23,10 @@ You don’t necessarily need active internet connection during drone shows. You 
 
 ## Can you tell me more about what happens when Live uploads show data to the drones during the pre-flight preparation?
 
-Let me summarize:
+1. Show data and the geofence are uploaded at the same time, in a single transaction. "Show data" basically includes the trajectories, the show origin, the show orientation and the geofence. Notably, the start time and the start method (RC or automatic) are _not_ part of the upload -- more about this later.
 
-- Show data and the geofence are uploaded at the same time, in a single transaction. "Show data" basically includes the trajectories, the show origin, the show orientation and the geofence. Notably, the start time and the start method (RC or automatic) are _not_ part of the upload -- more about this later.
+2. When you upload new show data for a drone, the old show data gets removed. The geofence is also replaced when uploading new show data.
 
-- When you upload new show data for a drone, the old show data gets removed. The geofence is also replaced when uploading new show data.
+3. It is possible to upload show data to only a sub-selection of drones from Live; in this case, the new show data gets uploaded to the selected drones, but any show data on drones that were not part of the upload transaction will not be touched. This is helpful in last-minute changes before a show when you replace a faulty drone with a new one -- you only need to upload the trajectory to the new drone and not touch the rest
 
-- It is possible to upload show data to only a sub-selection of drones from Live; in this case, the new show data gets uploaded to the selected drones, but any show data on drones that were not part of the upload transaction will not be touched. This is helpful in last-minute changes before a show when you replace a faulty drone with a new one -- you only need to upload the trajectory to the new drone and not touch the rest
-
-- Start time and start method are broadcast separately to the drones in a data packet once per second. This allows you to change the start time and the start method _after_ the upload, without having to re-upload the entire show data. But this also means that _all_ drones that you turn on will receive the start time and the start method, _and_ if they have valid show data _and_ happen to be at the right takeoff coordinate for that show data, they will start flying when the time comes. So, it is advised to turn off those drones that are not participating in the current flight, just to avoid the rare occasion that you happen to have a previous show trajectory on the drone and the drone is coincidentally placed at the right takeoff position for that show.
-
- **Note**
-
-- It is a well-kept secret that sending the message `show remove` to a drone from its Messages panel will clear the show data uploaded to the drone. It is meant primarily for debugging purposes only, but nevertheless it's there. Not having show data in show mode before takeoff is treated as a preflight check failure so in this case the drones should not take off.
+4. Start time and start method are broadcast separately to the drones in a data packet once per second. This allows you to change the start time and the start method _after_ the upload, without having to re-upload the entire show data. But this also means that _all_ drones that you turn on will receive the start time and the start method, _and_ if they have valid show data _and_ happen to be at the right takeoff coordinate for that show data, they will start flying when the time comes. So, it is advised to turn off those drones that are not participating in the current flight, just to avoid the rare occasion that you happen to have a previous show trajectory on the drone and the drone is coincidentally placed at the right takeoff position for that show.

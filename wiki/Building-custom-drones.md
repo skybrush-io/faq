@@ -148,3 +148,30 @@ Note that you will need the FastLED library for the sketch above; you can instal
 Yes, you can. You are allowed to redistribute the pre-compiled binaries for Skybrush components, but note that these pre-compiled binaries may include limitations in the number of drones that the software is willing to handle simultaneously, or other features of the software. You may also compile Skybrush from its source code, and you are then allowed to redistribute the unrestricted binaries. However, note that we cannot provide support beyond the standard community support for your customers for free.
 
 Contact us if you would like us to be responsible for supporting your customers in using Skybrush beyond community support as part of our trusted partner program.
+
+## Are there any budget-friendly small flight controllers without all the unnecessary functions which we don't need for a light show?
+
+It depends on whether you are thinking long-term or not. If you want to plan ahead, you should probably buy something with an STM32H7 processor. If you don't care, an old Pixhawk 2.4.8 will do.
+
+One option is the QioTek Zealot H743; no precompiled firmware yet on our homepage, but there will be soon (we have tested it recently in the lab and it seems to work great). People are also experimenting with the Mateksys H743 and the F405.
+
+## Are all the flightcontrollers with an STM32H7 compatible with Ardupilot / Skybrush?
+
+The Ardupilot documentation has a good section on [selecting an autopilot](https://ardupilot.org/copter/docs/common-autopilots.html).
+
+Not all of these are tested as we don't have the capacity to test all of them, but in general those with an SD card slot and an STM32H7 should work. Some of these might be compatible only with ArduCopter 4.2 or 4.3; our official firmware images published on the homepage are still based on 4.1 (because this is what we have battle-tested in shows ourselves), but lots of people are already flying with firmware images based on 4.2 or 4.3, so if the FC you end up choosing is not compatible with ArduCopter 4.1, let me know and we may be able to post updated images on Discord until they become official.
+
+## When I bought my drone, it came loaded with and tuned for the PX4 flight stack. When I load Arducopter / Skybrush, it too unstable to even hover. Can you provide settings for me?
+
+The drones we have settings for are listed [here](https://doc.collmot.com/public/skybrush-live-doc/latest/appendix/drone_specific_settings.html). If we don't have settings for your specific drone, the most problematic part is the tuning of the low-level controllers. For the initial low-level tuning of the controllers, the [First flight and tuning](https://ardupilot.org/copter/docs/flying-arducopter.html) section from the ArduCopter documentation should be enough to get started.
+
+Hints:
+
+- Use a tether until the drone becomes stable in manual flight
+- Don't fly at high altitudes
+ 
+You should be able to avoid most crashes :-)
+
+When you come up with a set of parameters that makes the drone fly more-or-less stable in autonomous modes, you can tweek your tune automatically using [this Arducopter procedure](https://ardupilot.org/copter/docs/autotune.html). Once your drone is flying well using your remote control both in manual and autonomous modes, be certain to set Skybrush's higer level settings, [documented here](https://doc.collmot.com/public/skybrush-live-doc/latest/tutorials/setup-hardware-outdoor/setup_arducopter_params.html). Now you should be ready to fly a show.
+
+If you are willing to contribute it to the project send it to us so we can make it public here!

@@ -5,7 +5,7 @@ Ardupilot's documentation is a great place to start. [Ardupilot logs](https://ar
 
 ## Which log analysis tool is recommended by Skybrush?
 
-Lots of Skybrush users use an on-line tool called [UAV Log Viewer](https://plot.ardupilot.org/#/)
+Lots of Skybrush users use an on-line tool called [UAV Log Viewer](https://plot.ardupilot.org/#/).
 
 ## Can anyone recommend a seminar teaching Ardupilot log analysis?
 

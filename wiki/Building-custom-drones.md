@@ -78,7 +78,7 @@ All drones should be equipped with a strong, bright RGBW LED light or many small
 
 ## What is a SiK radio, and what does it do?
 
-The Ardupilot documentation has a great introduction to SiK telemetry radios [here](https://ardupilot.org/copter/docs/common-sik-telemetry-radio.html#:~:text=Overview,patch%20antenna%20on%20the%20ground). 
+The ArduPilot documentation has a great introduction to SiK telemetry radios [here](https://ardupilot.org/copter/docs/common-sik-telemetry-radio.html#:~:text=Overview,patch%20antenna%20on%20the%20ground). 
 
 Skybrush uses SiK radios as a secondary or tertiary control link to send emergency commands. It sends commands one-way from the control station to the drone(s) and does not receive telemetry. [Sidekick](https://skybrush.io/modules/sidekick/) software is required (available with a Skybrush licence).
 
@@ -148,3 +148,30 @@ Note that you will need the FastLED library for the sketch above; you can instal
 Yes, you can. You are allowed to redistribute the pre-compiled binaries for Skybrush components, but note that these pre-compiled binaries may include limitations in the number of drones that the software is willing to handle simultaneously, or other features of the software. You may also compile Skybrush from its source code, and you are then allowed to redistribute the unrestricted binaries. However, note that we cannot provide support beyond the standard community support for your customers for free.
 
 Contact us if you would like us to be responsible for supporting your customers in using Skybrush beyond community support as part of our trusted partner program.
+
+
+## Are there any budget-friendly small flight controllers without all the unnecessary functions which we don't need for a light show?
+
+It depends on whether you are thinking long-term or not. If you want to plan ahead, you should probably buy something with an STM32H7 processor. If you don't care, older flight controllers based on STM32F4 will do, but note that you might be running into problems if you want to drive lots of NeoPixel LEDs with older flight controllers due to insufficient amount of RAM available on the flight controller after boot (NeoPixel pulses are assembled in RAM and they are proportional in length to the number of LEDs to drive). Also, it is getting increasingly harder to fit the firmware in 1MB of flash so older flight controllers having only 1MB of flash might become unsupported at some point in the future.
+
+
+## Are all the flight controllers with an STM32H7 compatible with ArduPilot / Skybrush?
+
+The ArduPilot documentation has a good section on [selecting an autopilot](https://ardupilot.org/copter/docs/common-autopilots.html).
+
+Not all of these are tested as we do not have the capacity to test all of them, but in general those with an SD card slot and an STM32H7 should work. We publish firmware images for those flight controllers that we have tested ourselves; if you do not see your flight controller on our homepage but you know that it supports ArduPilot, you might get lucky by compiling the firmware image on your own. You can ask for guidance on our [Discord server](https://skybrush.io/r/discord).
+
+## When I bought my drone, it came loaded with and tuned for the PX4 flight stack. When I load ArduCopter / Skybrush, it too unstable to even hover. Can you provide settings for me?
+
+The drones we have settings for are listed [here](https://doc.collmot.com/public/skybrush-live-doc/latest/appendix/drone_specific_settings.html). If we don't have settings for your specific drone, the most problematic part is the tuning of the low-level controllers. For the initial low-level tuning of the controllers, the [First flight and tuning](https://ardupilot.org/copter/docs/flying-arducopter.html) section from the ArduCopter documentation should be enough to get started.
+
+Hints:
+
+- Use a tether until the drone becomes stable in manual flight
+- Don't fly at high altitudes
+ 
+You should be able to avoid most crashes :-)
+
+When you come up with a set of parameters that makes the drone fly more-or-less stable in autonomous modes, you can tweak your tune automatically using [this ArduCopter procedure](https://ardupilot.org/copter/docs/autotune.html). Once your drone is flying well using your remote control both in manual and autonomous modes, be certain to set Skybrush's higer level settings, [documented here](https://doc.collmot.com/public/skybrush-live-doc/latest/tutorials/setup-hardware-outdoor/setup_arducopter_params.html). Now you should be ready to fly a show.
+
+If you are willing to contribute it to the project send it to us so we can make it public here!

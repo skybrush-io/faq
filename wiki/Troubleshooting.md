@@ -1,32 +1,32 @@
 
-## Where is a good place to start to learn about Ardupilot log files?
+## Where is a good place to start to learn about ArduPilot log files?
 
-Ardupilot's documentation is a great place to start. [Ardupilot logs](https://ardupilot.org/copter/docs/common-logs.html).
+ArduPilot's documentation is a great place to start. Start reading from [here](https://ardupilot.org/copter/docs/common-logs.html).
 
 ## Which log analysis tool is recommended by Skybrush?
 
-Lots of Skybrush users use an on-line tool called [UAV Log Viewer](https://plot.ardupilot.org/#/).
+Lots of Skybrush users use an on-line tool called [UAV Log Viewer](https://plot.ardupilot.org/). The advantage of this is that you do not need to install anything on your computer to analyze a log. [Mission Planner](https://ardupilot.org/planner/) also has facilities for log analysis. If you prefer the command line, you can also try [MAVExplorer](https://ardupilot.org/dev/docs/using-mavexplorer-for-log-analysis.html) from the MAVProxy suite.
 
 ## Can anyone recommend a seminar teaching Ardupilot log analysis?
 
-While there are not (yet) any seminars on log analysis specifically for Skybrush show drone related issues, this one hosted by Ardupilot developer Andrew Tridgell is a gold mine of information on the subject. [Ardupilot log analysis seminar](https://www.youtube.com/watch?v=WcfLTW_qZ08).
+While there are not (yet) any seminars on log analysis specifically for Skybrush show drone related issues, [this one hosted by ArduPilot developer Andrew Tridgell](https://www.youtube.com/watch?v=WcfLTW_qZ08) is a gold mine of information on the subject.
 
-## If I have an internal and external compass, is there any problem disabling the internal compass?
+## If I have an internal and an external compass, is there any problem disabling the internal compass?
 
 Disabling the internal compasses is usually not a problem. Internal compasses tend to be noisy due to all the electronics around them so if you have one or more reliable external compasses, it makes sense to disable the internal ones -- for one thing, you wouldn't get compass inconsistency errors before takeoff just because the internal ones are pointing in the wrong direction.
 
-If the drone is moving, the position and velocity information from the GPS, combined with motor outputs is enough for the EKF to provide a good yaw estimate. Compass-based yaw measurements come into play mostly when the drone is hovering because the velocity is close to zero at that point so it cannot  be used to estimate the yaw accurately.
+## My drone starts circling when it is instructed to hover in one place for more than a few seconds, but it is fine while flying from one point to the next. What can be the problem?
 
-That's why compass errors trigger toiletbowling mostly while hovering and not while the drone is going from point A to B.
+This is usually caused by compass calibration issues or interference between the compass and the motors. If the drone is moving, the position and velocity information from the GPS, combined with motor outputs is enough for the EKF to provide a good yaw estimate. Compass-based yaw measurements come into play mostly when the drone is hovering because the velocity is close to zero at that point so it cannot be used to estimate the yaw accurately. That's why compass errors trigger toiletbowling mostly while hovering and not while the drone is going from point A to B.
 
-## I am trying to connect NeoPixels to my Pixhawk Flight Controller, but not having much success. Are there any hints?
+## I am trying to connect NeoPixels to my PixHawk flight controller, but not having much success. Are there any hints?
 
 One thing that might help is to look at the early boot messages in Mission Planner; there should be a line that looks like this:
 ```
 RCOut: DS1200:1-4 NeoP:5-6
 ```
 This indicates which PWM groups (pins) are assigned to which functions. DS1200 is DShot1200 (i.e. an ESC protocol), NeoP is NeoPixel. This should help in debugging which functionality was assigned to which PWM group by the firmware early at boot. Typically you'll want PWM or a DShot variant on pins 1-4 (that go to the ESCs) and NeoP in some later group that goes to the LED light.
-With a PixHawk 6Cs, the boot message is:
+With a PixHawk 6C, the boot message is:
 ```
 RCOut: PWM:1-8 NeoP:9-12 PWM:13-16
 ```

@@ -4,4 +4,4 @@ No, by default all drones follow preprogrammed flight paths individually, which 
 
 ## Is there any way to set a dual layer geofence?
 
-Yes, if your national aviation authority requires a dual layer geofence, it can be set up using the three Skybrush Show paramaters documented [here](https://doc.collmot.com/public/skybrush-live-doc/latest/appendix/arducopter_show_params.html#_show_hfence_en_hard_fence_enabledisable). 
+Yes, if your national aviation authority requires a dual layer geofence, it can be set up using the Skybrush firmware parameters starting with `SHOW_HFENCE_...`, documented [here](https://doc.collmot.com/public/skybrush-live-doc/latest/appendix/arducopter_show_params.html#_show_hfence_en_hard_fence_enabledisable). 

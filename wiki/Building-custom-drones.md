@@ -74,7 +74,10 @@ All drones should be equipped with a strong, bright RGBW LED light or many small
   
 - there is also an option for I2C-connected LED modules. You can use an Arduino Nano or something similar, with a small sketch that presents the Arduino as an I2C device towards the flight controller. You can use [this sketch](#is-it-possible-to-use-the-i2c-bus-of-the-flight-controller-to-control-the-leds-on-my-drone).
 
-- You can tweak an ESP8266 or ESP32 wifi module and use it both to connect to the ground via wifi and to control the LEDs. Our firmware can be configured to send MAVLink commands to the wifi module to control the LEDs, but you need a custom firmware on the ESP to take care of both the wifi connection and the LEDs. You can probably use our mavesp8266 fork as a starting point, but you need to add the LED handling.
+- You can tweak an ESP8266 or ESP32 wifi module and use it both to connect to the ground via wifi and to control the LEDs. Our firmware can be configured to send MAVLink commands to the wifi module to control the LEDs, but you need a custom firmware on the ESP to take care of both the wifi connection and the LEDs. You can probably use our `mavesp8266` fork as a starting point, but you need to add the LED handling.
+
+> **Note**
+> We were told that earlier revisions of the [Fireball LED payload](https://github.com/ugcs/ddc/tree/master/Drone_hardware/Fireball_LED_payload) had issues with heat generated from the LEDs. Rev F attempted to solve the heating problem, but some of the issues remained. We were also informed that the schematics does not show that each LED needed to be grounded. There is ongoing work on a new revision of the board by a member of our [Discord](https://skybrush.io/r/discord) community to solve the issues with Rev F, so before you start building this board, feel free to ask around on our Discord server to see if you could simply order a newer revision.
 
 ## What is a SiK radio, and what does it do?
 

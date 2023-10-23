@@ -51,4 +51,4 @@ Operators have 3 independent command and control links which may be used to inte
 2. Skybrush Sidekick running on an separate computer and capable of sending one-way commands to any or all drones via a separate radio link, and
 3. RC control capable of sending one way commands to the entire fleet.
 
-Each operator must understand their own setup and develop [security procedures](https://doc.collmot.com/public/faq/latest/security.html). Standard and emergency operating procedures will be required by the your [national aviation authority](https://doc.collmot.com/public/faq/latest/legal-issues.html) when you apply for authorization to fly drone shows in your country.
+Each operator must understand their own setup and develop [security procedures](https://doc.collmot.com/public/faq/latest/security.html). Standard and emergency operating procedures will be required by [national aviation authority](https://doc.collmot.com/public/faq/latest/legal-issues.html) of the country in which one applies for authorization to fly drone shows.

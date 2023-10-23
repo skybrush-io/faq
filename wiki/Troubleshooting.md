@@ -45,4 +45,4 @@ SERVOx_FUNCTION ( x=5-16 ) 0 (disabled) (yours may need to be set to -1)
 ```
 The Pixhawk 6C has two physical PWM output rails. The first is labeled ‘I/O PWM OUT’ (the MAIN outputs) which is used for motors. The second is labeled ‘FMU PWM OUT’ which maps to the AUX outputs. In this example, the lights are connected to PWM channel 1 of the FMU PWM OUT rail, which maps to AUX1, and is set by Skybrush as SHOW_LED0_CHAN 9.
 
-On the Pixhawk 6C, there is a grouping concept with regard to PWM servo use. SMT32 MCU has the limited number of timer channels, whose motor or servo PWM are depended on. NeoPixel need a specific use case of PWM and timer. The documentation can be found [here](https://ardupilot.org/copter/docs/common-holybro-pixhawk6X.html).
+On the Pixhawk 6C, there is a grouping concept with regard to PWM servo use. SMT32 MCU has a limited number of timer channels on which motor and servo PWM are dependant. NeoPixel need a specific use case of PWM and timer. The documentation can be found [here](https://ardupilot.org/copter/docs/common-holybro-pixhawk6X.html).

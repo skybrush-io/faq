@@ -59,4 +59,4 @@ Operators have 3 independent command and control links which may be used to inte
 . RC control capable of sending one way commands to the entire fleet.
 
 Each operator must understand their own setup and develop https://doc.collmot.com/public/faq/latest/security.html[security procedures].
-Standard and emergency operating procedures will be required by the your https://doc.collmot.com/public/faq/latest/legal-issues.html[national aviation authority] when you apply for authorization to fly drone shows in your country.
+Standard and emergency operating procedures will be required by https://doc.collmot.com/public/faq/latest/legal-issues.html[national aviation authority] of the country in which one applies for authorization to fly drone shows.

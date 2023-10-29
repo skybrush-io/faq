@@ -6,4 +6,4 @@ Our commitment is to support full compatibility with the latest LTS release of B
 
 Yes! Skybrush as produced a comprehensive video series on YouTube, available here: https://skybrush.io/support/tutorials/
 
-Several SKybrush users have also created instructional vidoes such as 'Basic Blender Skybrush Studio Tutorial' available here: https://youtu.be/jmGiABzYrOo.
+Several Skybrush users have also created instructional vidoes such as 'Basic Blender Skybrush Studio Tutorial' available here: https://youtu.be/jmGiABzYrOo.

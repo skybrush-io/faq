@@ -4,6 +4,5 @@ Our commitment is to support full compatibility with the latest LTS release of B
 
 ## Are there video tutorials available to learn Skybrush Studio?
 
-Yes! Skybrush has produced a comprehensive video series on YouTube, available here: https://skybrush.io/support/tutorials/.
-
-Several Skybrush users have also created instructional vidoes such as 'Basic Blender Skybrush Studio Tutorial' available here: https://youtu.be/jmGiABzYrOo.
+A wide selection of video tutorials are available for Skybrush Studio for Blender - both offical tutorials from [CollMot Robotics](https://collmot.com), and also from third parties.
+You can access the tutorials in a [YouTube playlist](https://skybrush.io/support/tutorials/).

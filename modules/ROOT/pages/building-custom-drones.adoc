@@ -30,6 +30,7 @@ If you wish to try it on your own, these are the basic components needed:
 . An <<what-is-an-rc-receiver-and-why-do-i-need-one-on-each-drone,RC receiver>>
 . A <<what-kinds-of-light-fixtures-does-skybrush-firmware-support,light fixture>>
 . An optional <<what-is-a-sik-radio-and-what-does-it-do,SiK radio>>
+. An optional <<what-kinds-of-pyro-devices-does-skybrush-firmware-support,pyro device>>
 
 [#what-flight-controller-can-i-use-with-skybrush-firmware]
 == What flight controller can I use with Skybrush firmware?
@@ -111,6 +112,14 @@ NOTE: We were told that earlier revisions of the https://github.com/ugcs/ddc/tre
 Rev F attempted to solve the heating problem, but some of the issues remained.
 We were also informed that the schematics does not show that each LED needed to be grounded.
 There is ongoing work on a new revision of the board by a member of our https://skybrush.io/r/discord[Discord] community to solve the issues with Rev F, so before you start building this board, feel free to ask around on our Discord server to see if you could simply order a newer revision.
+
+The most up-to-date list of supported light fixtures can be found in the https://doc.collmot.com/public/skybrush-firmware-doc/latest/configuration/led.html[LED configuration] section of the *Skybrush firmware* documentation.
+
+[#what-kinds-of-pyro-devices-does-skybrush-firmware-support]
+== What kinds of pyro devices does Skybrush firmware support?
+
+Skybrush supports optional pyro triggering on multiple pyro channels.
+The supported list of pyro devices can be found in the https://doc.collmot.com/public/skybrush-firmware-doc/latest/configuration/pyro.html[Pyro configuration] section of the *Skybrush firmware* documentation.
 
 [#what-is-a-sik-radio-and-what-does-it-do]
 == What is a SiK radio, and what does it do?

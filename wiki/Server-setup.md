@@ -1,3 +1,9 @@
+## How to configure Skybrush Server?
+
+**Skybrush Server** configuration files are stored in plain-text `.jsonc` or `.toml` format. The actual file used by your server instance is logged in the terminal of the server. You can edit your configuration file manually, or through the configuration GUI at `localhost:5000` while the server is running. 
+
+A full guide on how to configure **Skybrush Server** can be found in the [Skybrush Server documentation](https://doc.collmot.com/public/skybrush-server-doc/latest/configuration/index.html).
+
 ## I am getting `No route to host` errors on the server console on macOS
 
 This issue happens with macOS Sequoia or later _if_ you are using third-party
@@ -7,3 +13,4 @@ terminal app to access the local network.
 To fix this, go to *System Settings* > *Privacy & Security* > *Local Network*
 and allow your terminal application to access the local network. You will need
 to restart the terminal app after you have changed the setting.
+

@@ -21,6 +21,7 @@ If you wish to make your drones compatible with Skybrush, contact us to do it to
 4. An [RC receiver](#what-is-an-rc-receiver-and-why-do-i-need-one-on-each-drone)
 5. A [light fixture](#what-kinds-of-light-fixtures-does-skybrush-firmware-support)
 6. An optional [SiK radio](#what-is-a-sik-radio-and-what-does-it-do)
+7. An optional [pyro device](#what-kinds-of-pyro-devices-does-skybrush-firmware-support)
 
 
 ## What flight controller can I use with Skybrush firmware?
@@ -78,6 +79,12 @@ All drones should be equipped with a strong, bright RGBW LED light or many small
 
 > **Note**
 > We were told that earlier revisions of the [Fireball LED payload](https://github.com/ugcs/ddc/tree/master/Drone_hardware/Fireball_LED_payload) had issues with heat generated from the LEDs. Rev F attempted to solve the heating problem, but some of the issues remained. We were also informed that the schematics does not show that each LED needed to be grounded. There is ongoing work on a new revision of the board by a member of our [Discord](https://skybrush.io/r/discord) community to solve the issues with Rev F, so before you start building this board, feel free to ask around on our Discord server to see if you could simply order a newer revision.
+
+The most up-to-date list of supported light fixtures can be found in the [LED configuration](https://doc.collmot.com/public/skybrush-firmware-doc/latest/configuration/led.html) section of the **Skybrush firmware** documentation.
+
+## What kinds of pyro devices does Skybrush firmware support?
+
+Skybrush supports optional pyro triggering on multiple pyro channels. The supported list of pyro devices can be found in the [Pyro configuration](https://doc.collmot.com/public/skybrush-firmware-doc/latest/configuration/pyro.html) section of the **Skybrush firmware** documentation.
 
 ## What is a SiK radio, and what does it do?
 

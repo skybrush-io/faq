@@ -1,5 +1,14 @@
 = Server setup
 
+[#how-to-configure-skybrush-server]
+== How to configure Skybrush Server?
+
+*Skybrush Server* configuration files are stored in plain-text `.jsonc` or `.toml` format.
+The actual file used by your server instance is logged in the terminal of the server.
+You can edit your configuration file manually, or through the configuration GUI at `localhost:5000` while the server is running.
+
+A full guide on how to configure *Skybrush Server* can be found in the https://doc.collmot.com/public/skybrush-server-doc/latest/configuration/index.html[Skybrush Server documentation].
+
 [#i-am-getting-no-route-to-host-errors-on-the-server-console-on-macos]
 == I am getting `No route to host` errors on the server console on macOS
 

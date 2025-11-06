@@ -4,7 +4,11 @@ There are no programmatic limits on the number of drones that Skybrush itself ca
 
 A soft limitation occurs when you are using MAVLink-based drones, as their ID stored in the [SYSID_THISMAV](https://ardupilot.org/copter/docs/parameters.html#sysid-thismav-mavlink-system-id-of-this-vehicle) parameter can only handle one byte ID-s, so practically you are limited to handle around 250 drones per network. If you need more than that, you have to use multiple routers in parallel and configure Skybrush Server to access them in different subnets.
 
+There is another soft limit in the open-source version of the server written in Python, which can become painfully slow and unreliable above around 500-800 drones, depending on your hardware. For such large shows we strongly encourage you to buy a professional license, which includes several components rewritten in Rust for high reliability and enhanced performance, among many other useful features required by professional drone show operations and several flight authorities.
+
 Finally, please note that the pre-compiled community version of Skybrush Server is limited to handle max 10 drones. To enjoy the full extent of Skybrush with unlimited drone number and many other pro features, we encourage you to buy a professional licence.
+
+With buying pro licenses you also support the maintenance, further development and thus the overall stability of the Skybrush ecosystem.
 
 
 ## Are there any built-in limitations in Skybrush?

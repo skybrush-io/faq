@@ -4,6 +4,7 @@ Questions and the corresponding answers are organized into categories. Please vi
 
 - [[Overview]] of the Skybrush system
 - [[Building custom drones]] with Skybrush compatibility
+- [[Firmware setup]]
 - [[Server setup]]
 - [[Running shows]] with Skybrush Live 
 - [[Show design]] with Skybrush Studio for Blender

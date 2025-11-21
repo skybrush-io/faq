@@ -1,0 +1,10 @@
+## What's the impact and purpose of SHOW_TAKEOFF_ALT param?
+
+The purpose is threefold:
+
+1. When the show starts, we issue a takeoff command, where we need to pass something to ArduPilot as the takeoff altitude so we will pass the value of this parameter.
+
+2. For safety purposes, the firmware prevents the horizontal movement of the drone below 80% of this altitude when in show mode, in the takeoff phase and in the landing phase. So it is advisable to set this parameter in a way that 80% of it is above the average human height.
+
+3. When evaluating the show trajectory, we determine the landing time (i.e. the time when we trigger the landing command) by finding the last time instant in the show when the trajectory crosses this altitude from above. Trajectory following is stopped at that point and a standard MAVLink landing or RTH command is issued (depending on `SHOW_POST_ACTION`).
+

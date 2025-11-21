@@ -4,9 +4,10 @@
 
 Welcome to the list of frequently asked questions regarding Skybrush, the open-source drone show software.
 
-= Topics
+== Topics
 
 * [[Building custom drones]] with Skybrush compatibility
+* [[Firmware setup]]
 * [[Server setup]]
 * [[Running shows]] with Skybrush Live
 * [[Show design]] with Skybrush Studio for Blender

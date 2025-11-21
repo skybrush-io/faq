@@ -5,6 +5,7 @@ Welcome to the list of frequently asked questions regarding Skybrush, the open-s
 Questions and the corresponding answers are organized into categories. Please visit the page of the category you are interested in:
 
 * xref:building-custom-drones.adoc[]
+* xref:firmware-setup.adoc[]
 * xref:legal-issues.adoc[]
 * xref:overview.adoc[]
 * xref:running-shows.adoc[]

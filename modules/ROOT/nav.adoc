@@ -1,4 +1,5 @@
 * xref:building-custom-drones.adoc[]
+* xref:firmware-setup.adoc[]
 * xref:legal-issues.adoc[]
 * xref:overview.adoc[]
 * xref:running-shows.adoc[]

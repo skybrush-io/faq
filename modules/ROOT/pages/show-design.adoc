@@ -14,6 +14,25 @@ If the problem persists, feel free to https://github.com/skybrush-io/studio-blen
 A wide selection of video tutorials are available for Skybrush Studio for Blender - both offical tutorials from https://collmot.com[CollMot Robotics], and also from third parties.
 You can access the tutorials in a https://skybrush.io/support/tutorials/[YouTube playlist].
 
+[#which-drones-are-included-in-the-nearest-neighbor-calculations]
+== Which drones are included in the nearest neighbor calculations?
+
+Skybrush Studio has a simple logic: you can select explicitly whether to consider all drones in the nearest neighbor calculations or only those that are above the minimum altitude setting of the safety check panel.
+(The minimum altitude setting also acts as a threshold below which no horizontal movement is allowed for the drones).
+
+Skybrush Viewer is a bit more sophisticated than that as it does not know about the minimum altitude setting in Blender so it needs to figure out which of the drones are likely to be in the air on its own.
+This is important for multi-stage shows where the entire swarm is divided into batches that take off at entirely different times.
+Imagine a 2000-drone two-stage show where 1000 drones are taking off at the beginning, and then 1000 drones are taking off 10 minutes later to replace the first 1000 drones in the air.
+Including any drone that has not yet taken off, _or_ including any drone that has already landed would mean that we report the distance of this drone to the drone adjacent to it in the takeoff grid, rendering the minimum distance calculation useless as the minimum allowed distance on the ground is larger than the minimum allowed distance in the air.
+
+So, the rule is that _we exclude any drone from the proximity calculation that is standing exactly at its takeoff or landing location_, and we only calculate distances between the remaining ones.
+
+The second rule is that _if there are no drones that are far enough from their takeoff or landing locations_, we calculate distances between all of them.
+This is to allow the proximity chart to give an indication of the grid spacing at the beginning and at the end of the show, even if there are no drones in the air at the moment.
+
+These rules practically mean that Viewer will show your takeoff grid spacing at the beginning and at the end of the show, but as soon as the drones start to takeoff of it will only include those drones that are in the air.
+If you see a sawtooth-like pattern in the proximity chart of Viewer, this probably means that you are doing a layered takeoff and the layers are taking off too close to each other so two drones in consecutive layers are dangerously close until the layers get far enough from each other.
+
 [#i-need-to-design-a-show-where-the-drones-are-launched-from-a-roof-but-will-land-on-the-ground-how-can-i-do-that-will-this-cause-any-issues]
 == I need to design a show where the drones are launched from a roof but will land on the ground. How can I do that? Will this cause any issues?
 

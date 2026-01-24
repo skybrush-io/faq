@@ -7,13 +7,25 @@ Our commitment is to support full compatibility with the latest LTS release of B
 A wide selection of video tutorials are available for Skybrush Studio for Blender - both offical tutorials from [CollMot Robotics](https://collmot.com), and also from third parties.
 You can access the tutorials in a [YouTube playlist](https://skybrush.io/support/tutorials/).
 
+## Which drones are included in the nearest neighbor calculations?
+
+Skybrush Studio has a simple logic: you can select explicitly whether to consider all drones in the nearest neighbor calculations or only those that are above the minimum altitude setting of the safety check panel. (The minimum altitude setting also acts as a threshold below which no horizontal movement is allowed for the drones).
+
+Skybrush Viewer is a bit more sophisticated than that as it does not know about the minimum altitude setting in Blender so it needs to figure out which of the drones are likely to be in the air on its own. This is important for multi-stage shows where the entire swarm is divided into batches that take off at entirely different times. Imagine a 2000-drone two-stage show where 1000 drones are taking off at the beginning, and then 1000 drones are taking off 10 minutes later to replace the first 1000 drones in the air. Including any drone that has not yet taken off, _or_ including any drone that has already landed would mean that we report the distance of this drone to the drone adjacent to it in the takeoff grid, rendering the minimum distance calculation useless as the minimum allowed distance on the ground is larger than the minimum allowed distance in the air.
+
+So, the rule is that _we exclude any drone from the proximity calculation that is standing exactly at its takeoff or landing location_, and we only calculate distances between the remaining ones.
+
+The second rule is that _if there are no drones that are far enough from their takeoff or landing locations_, we calculate distances between all of them. This is to allow the proximity chart to give an indication of the grid spacing at the beginning and at the end of the show, even if there are no drones in the air at the moment.
+
+These rules practically mean that Viewer will show your takeoff grid spacing at the beginning and at the end of the show, but as soon as the drones start to takeoff of it will only include those drones that are in the air. If you see a sawtooth-like pattern in the proximity chart of Viewer, this probably means that you are doing a layered takeoff and the layers are taking off too close to each other so two drones in consecutive layers are dangerously close until the layers get far enough from each other.
+
 ## I need to design a show where the drones are launched from a roof but will land on the ground. How can I do that? Will this cause any issues?
 
 The entire Skybrush design and execution pipeline assumes that the drones are launched from Z=0 in the show coordinate system (or very close to that -- a small incline is okay). If you need to launch from a roof, you can set up your show design so that the roof is at Z=0, and the ground is at a negative Z value. This way, the drones will launch from the roof level and land on the ground level as intended. The drones may descend below the roof level as many times during the show as needed -- the only thing you need to ensure is that they are all several meters (2.5m by default) _above_ the roof level before starting the landing sequence. This is needed because the Skybrush firmware determines the time to trigger the landing command based on the time the drone crosses the "landing altitude" (which is 2.5m above the launch altitude by default) _for the last time_ during the show.
 
 More precisely (from a technical point of view):
 
-* Set up your show coordinate system so that the roof level is at Z=0, and the ground level is at a negative Z value.
-* Plan your show in a way that the net show content is above z = `SHOW_TAKEOFF_ALT`, where `SHOW_TAKEOFF_ALT` is set on the drone in the parameter set and it is typically 2.5m (this is the default).
-* The trajectories uploaded to the drone will be cut at the point where the trajectory altitude sinks below `SHOW_TAKEOFF_ALT` for the last time, so you do not need to bring the drones down to below Z=0 in the design process. You _can_ bring them down to Z=0, however as that's the easiest in Blender (just make sure they do not move sideways below `SHOW_TAKEOFF_ALT`).
-* When the trajectory ends at the cut point, the drone will execute the action configured in the `SHOW_POST_ACTION` parameter, where the default value is "land" so the drones will continue descending in a straight line, holding their horizontal position at the point where the landing action was triggered, with the aid of the GPS.
+- Set up your show coordinate system so that the roof level is at Z=0, and the ground level is at a negative Z value.
+- Plan your show in a way that the net show content is above z = `SHOW_TAKEOFF_ALT`, where `SHOW_TAKEOFF_ALT` is set on the drone in the parameter set and it is typically 2.5m (this is the default).
+- The trajectories uploaded to the drone will be cut at the point where the trajectory altitude sinks below `SHOW_TAKEOFF_ALT` for the last time, so you do not need to bring the drones down to below Z=0 in the design process. You _can_ bring them down to Z=0, however as that's the easiest in Blender (just make sure they do not move sideways below `SHOW_TAKEOFF_ALT`).
+- When the trajectory ends at the cut point, the drone will execute the action configured in the `SHOW_POST_ACTION` parameter, where the default value is "land" so the drones will continue descending in a straight line, holding their horizontal position at the point where the landing action was triggered, with the aid of the GPS.

@@ -3,20 +3,26 @@ GEM
   specs:
     kramdown (2.4.0)
       rexml
-    kramdown-asciidoc (2.1.0)
+    kramdown-asciidoc (2.1.1)
       kramdown (~> 2.4.0)
       kramdown-parser-gfm (~> 1.1.0)
-      rexml (~> 3.2.0)
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
-    rexml (3.2.6)
+    rexml (3.4.4)
 
 PLATFORMS
-  arm64-darwin-21
-  x86_64-linux
+  arm64-darwin-25
+  ruby
 
 DEPENDENCIES
   kramdown-asciidoc (~> 2.1)
 
+CHECKSUMS
+  bundler (4.1.0.beta3) sha256=3a0dbbbb7c86af269517a9de67903472e219d3ae9edb3b6b4da7706cdc993d12
+  kramdown (2.4.0) sha256=b62e5bcbd6ea20c7a6730ebbb2a107237856e14f29cebf5b10c876cc1a2481c5
+  kramdown-asciidoc (2.1.1) sha256=5823c2d8b6e8770773f701b08fb34fbe3e04e95d5eb9f7308379439b33c4f89f
+  kramdown-parser-gfm (1.1.0) sha256=fb39745516427d2988543bf01fc4cf0ab1149476382393e0e9c48592f6581729
+  rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
+
 BUNDLED WITH
-   2.2.32
+  4.1.0.beta3

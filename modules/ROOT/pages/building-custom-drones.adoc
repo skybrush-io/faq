@@ -19,10 +19,7 @@ You need to compile and install our modified version on your drone in order to e
 We publish pre-compiled versions of the firmware for the stock Crazyflie and several suggested Bolt-based builds.
 
 [#if-i-decide-to-build-a-custom-light-show-drone-what-components-are-required]
-== If I decide to build a custom light show drone, what components are required?
-
-If you wish to make your drones compatible with Skybrush, contact us to do it together to become trusted partners!
-If you wish to try it on your own, these are the basic components needed:
+== If I decide to build a custom light show drone, what basic components are required?
 
 . A <<what-flight-controller-can-i-use-with-skybrush-firmware,flight controller>> running Ardupilot
 . A <<what-wifi-module-do-i-need-on-the-drone,WiFi module>> to connect to the ground station running Live
@@ -31,6 +28,14 @@ If you wish to try it on your own, these are the basic components needed:
 . A <<what-kinds-of-light-fixtures-does-skybrush-firmware-support,light fixture>>
 . An optional <<what-is-a-sik-radio-and-what-does-it-do,SiK radio>>
 . An optional <<what-kinds-of-pyro-devices-does-skybrush-firmware-support,pyro device>>
+
+[#what-support-options-and-assistance-are-available]
+== What support options and assistance are available?
+
+If you operate an existing drone fleet using another software platform and are considering switching to Skybrush, or if you manufacture drones for commercial distribution and would like to ensure compatibility with Skybrush, please contact us to explore potential cooperation opportunities and available support options.
+
+For individuals building drones for their own use, one-on-one support and personal consultations are not currently available.
+We encourage you to post your questions in the #custom-builds channel on our https://skybrush.io/r/discord[Discord server], where our technical team and community members will provide assistance and share their expertise with you.
 
 [#what-flight-controller-can-i-use-with-skybrush-firmware]
 == What flight controller can I use with Skybrush firmware?
